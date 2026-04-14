@@ -81,73 +81,75 @@ const Home = () => {
     }
   ];
 
-  const carteCategories = [
-    {
-      category: 'Entrées',
-      items: [
-        { name: 'Foie Gras Maison', price: '16,90€' },
-        { name: 'Planche Charcuterie', price: '12,50€' },
-        { name: 'Salade de Chèvre', price: '11,90€' }
-      ]
-    },
-    {
-      category: 'Viandes & Poissons',
-      items: [
-        { name: 'Tartare de Bœuf', price: '15,90€' },
-        { name: 'Magret de Canard', price: '21,00€' },
-        { name: 'Dorade Grillée', price: '19,50€' }
-      ]
-    },
-    {
-      category: 'Burgers',
-      items: [
-        { name: 'Le Rossini', price: '17,90€' },
-        { name: 'Le Royal Cheese', price: '15,90€' },
-        { name: 'Le Provençal', price: '16,50€' }
-      ]
-    },
-    {
-      category: 'Pizzas',
-      items: [
-        { name: 'Regina', price: '13,00€' },
-        { name: 'Provençale', price: '12,50€' },
-        { name: 'Quatre Fromages', price: '14,00€' }
-      ]
-    }
-  ];
+  const carteData = {
+    entrees: [
+      { name: 'Foie Gras Maison', price: '16,90€' },
+      { name: 'Planche Charcuterie', price: '12,50€' },
+      { name: 'Salade de Chèvre Chaud', price: '11,90€' },
+      { name: 'Tartare de Saumon', price: '13,50€' },
+      { name: 'Carpaccio de Bœuf', price: '12,90€' }
+    ],
+    plats: [
+      { name: 'Magret de Canard', price: '21,00€' },
+      { name: 'Dorade Grillée', price: '19,50€' },
+      { name: 'Entrecôte Frites', price: '19,00€' },
+      { name: 'Pavé de Saumon', price: '18,50€' },
+      { name: 'Confit de Canard', price: '20,00€' },
+      { name: 'Tartare de Bœuf', price: '15,90€' }
+    ],
+    burgers: [
+      { name: 'Le Rossini', price: '17,90€', desc: 'Foie gras, confit d\'oignons' },
+      { name: 'Le Royal Cheese', price: '15,90€', desc: 'Double cheddar, bacon' },
+      { name: 'Le Provençal', price: '16,50€', desc: 'Chèvre, miel, roquette' },
+      { name: 'Le Classic', price: '14,50€', desc: 'Cheddar, salade, tomate' }
+    ],
+    pizzas: [
+      { name: 'Regina', price: '13,00€', desc: 'Jambon, champignons' },
+      { name: 'Provençale', price: '12,50€', desc: 'Légumes du soleil' },
+      { name: 'Quatre Fromages', price: '14,00€', desc: 'Mozzarella, chèvre, bleu, emmental' },
+      { name: 'Reine', price: '13,50€', desc: 'Jambon, olives, champignons' }
+    ],
+    desserts: [
+      { name: 'Tiramisu Maison', price: '7,50€' },
+      { name: 'Crème Brûlée', price: '7,00€' },
+      { name: 'Tarte Tatin', price: '8,00€' },
+      { name: 'Coupe Glacée', price: '6,50€' },
+      { name: 'Fondant au Chocolat', price: '8,50€' }
+    ]
+  };
 
   const galleryImages = [
     {
-      url: 'https://images.unsplash.com/photo-1641209751671-d1cd7bedcd86',
-      label: 'Planche'
+      url: 'https://customer-assets.emergentagent.com/job_provence-dining/artifacts/6fnel6hl_69010301_888512718189279_4142079074581348352_n.jpg',
+      label: 'Entrée Melon Jambon'
     },
     {
-      url: 'https://images.unsplash.com/photo-1608897013039-887f21d8c804',
-      label: 'Ravioles'
+      url: 'https://customer-assets.emergentagent.com/job_provence-dining/artifacts/7xwrj3ae_53110846_776416286065590_1070365855151292416_n.jpg',
+      label: 'Petits Pains Maison'
     },
     {
       url: 'https://images.unsplash.com/photo-1550547660-d9450f859349',
-      label: 'Burger'
+      label: 'Burgers Gourmands'
     },
     {
       url: 'https://customer-assets.emergentagent.com/job_5402dfc9-f18a-4ac1-918e-f12a259e280c/artifacts/wuf5qalk_unnamed%20%286%29.jpg',
-      label: 'Dessert'
+      label: 'Dessert Tiramisu'
     },
     {
       url: 'https://customer-assets.emergentagent.com/job_5402dfc9-f18a-4ac1-918e-f12a259e280c/artifacts/eo8njvow_unnamed%20%287%29.jpg',
-      label: 'Pizza'
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0',
-      label: 'Magret'
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0',
-      label: 'Tartare'
+      label: 'Pizza Maison'
     },
     {
       url: 'https://images.unsplash.com/photo-1600699899970-b1c9fadd8f9e',
-      label: 'Poisson'
+      label: 'Poisson Grillé'
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1641209751671-d1cd7bedcd86',
+      label: 'Planche Bistrot'
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1608897013039-887f21d8c804',
+      label: 'Pâtes Fraîches'
     }
   ];
 
@@ -222,8 +224,8 @@ const Home = () => {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="fade-in-up">
                 <img 
-                  src="https://customer-assets.emergentagent.com/job_5402dfc9-f18a-4ac1-918e-f12a259e280c/artifacts/oool28dk_unnamed%20%283%29.jpg" 
-                  alt="Équipe du restaurant" 
+                  src="https://customer-assets.emergentagent.com/job_provence-dining/artifacts/6fnel6hl_69010301_888512718189279_4142079074581348352_n.jpg" 
+                  alt="Assiette Melon et Jambon de Parme - Spécialité Provençale" 
                   className="h-80 w-full object-cover rounded-lg shadow-lg"
                 />
               </div>
@@ -272,27 +274,100 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Section La Carte */}
-      <section id="carte" className="py-20 bg-warm-cream">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="font-serif text-4xl md:text-5xl text-center mb-16 fade-in-up">
+      {/* Section La Carte - Full Width Menu */}
+      <section id="carte" className="py-20 bg-chocolate">
+        <div className="w-full">
+          <div className="max-w-7xl mx-auto px-4">
+            <h2 className="font-cursive text-5xl md:text-6xl text-center mb-4 fade-in-up text-cream">
               La Carte
             </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {carteCategories.map((category, index) => (
-                <div key={index} className="fade-in-up">
-                  <h3 className="font-serif text-2xl mb-6 text-terracotta">{category.category}</h3>
-                  <div className="space-y-4">
-                    {category.items.map((item, idx) => (
-                      <div key={idx} className="flex justify-between items-center border-b border-gray-200 pb-2">
-                        <span>{item.name}</span>
-                        <span className="font-semibold">{item.price}</span>
+            <p className="text-center text-cream/80 mb-16 fade-in-up">Découvrez nos spécialités</p>
+            
+            {/* Menu Grid - 2 Columns */}
+            <div className="grid md:grid-cols-2 gap-x-16 gap-y-12">
+              
+              {/* Column 1 */}
+              <div className="space-y-12">
+                {/* Entrées */}
+                <div className="fade-in-up">
+                  <h3 className="font-cursive text-4xl mb-6 text-terracotta text-center md:text-left">Entrées</h3>
+                  <div className="space-y-3">
+                    {carteData.entrees.map((item, idx) => (
+                      <div key={idx} className="flex items-center justify-between text-cream border-b border-cream/20 pb-2">
+                        <span className="text-lg">{item.name}</span>
+                        <span className="flex-1 mx-3 border-b border-dotted border-cream/30"></span>
+                        <span className="font-semibold text-lg">{item.price}</span>
                       </div>
                     ))}
                   </div>
                 </div>
-              ))}
+
+                {/* Burgers */}
+                <div className="fade-in-up">
+                  <h3 className="font-cursive text-4xl mb-6 text-terracotta text-center md:text-left">Burgers</h3>
+                  <div className="space-y-3">
+                    {carteData.burgers.map((item, idx) => (
+                      <div key={idx} className="text-cream pb-2 border-b border-cream/20">
+                        <div className="flex items-center justify-between">
+                          <span className="text-lg font-semibold">{item.name}</span>
+                          <span className="flex-1 mx-3 border-b border-dotted border-cream/30"></span>
+                          <span className="font-semibold text-lg">{item.price}</span>
+                        </div>
+                        {item.desc && <p className="text-sm text-cream/70 mt-1 italic">{item.desc}</p>}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Desserts */}
+                <div className="fade-in-up">
+                  <h3 className="font-cursive text-4xl mb-6 text-terracotta text-center md:text-left">Desserts</h3>
+                  <div className="space-y-3">
+                    {carteData.desserts.map((item, idx) => (
+                      <div key={idx} className="flex items-center justify-between text-cream border-b border-cream/20 pb-2">
+                        <span className="text-lg">{item.name}</span>
+                        <span className="flex-1 mx-3 border-b border-dotted border-cream/30"></span>
+                        <span className="font-semibold text-lg">{item.price}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Column 2 */}
+              <div className="space-y-12">
+                {/* Plats */}
+                <div className="fade-in-up">
+                  <h3 className="font-cursive text-4xl mb-6 text-terracotta text-center md:text-left">Plats</h3>
+                  <div className="space-y-3">
+                    {carteData.plats.map((item, idx) => (
+                      <div key={idx} className="flex items-center justify-between text-cream border-b border-cream/20 pb-2">
+                        <span className="text-lg">{item.name}</span>
+                        <span className="flex-1 mx-3 border-b border-dotted border-cream/30"></span>
+                        <span className="font-semibold text-lg">{item.price}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Pizzas */}
+                <div className="fade-in-up">
+                  <h3 className="font-cursive text-4xl mb-6 text-terracotta text-center md:text-left">Pizzas</h3>
+                  <div className="space-y-3">
+                    {carteData.pizzas.map((item, idx) => (
+                      <div key={idx} className="text-cream pb-2 border-b border-cream/20">
+                        <div className="flex items-center justify-between">
+                          <span className="text-lg font-semibold">{item.name}</span>
+                          <span className="flex-1 mx-3 border-b border-dotted border-cream/30"></span>
+                          <span className="font-semibold text-lg">{item.price}</span>
+                        </div>
+                        {item.desc && <p className="text-sm text-cream/70 mt-1 italic">{item.desc}</p>}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              
             </div>
           </div>
         </div>
@@ -413,7 +488,7 @@ const Home = () => {
                   Appeler - 04 90 99 51 93
                 </Button>
               </a>
-              <a href="https://www.facebook.com/profile.php?id=100063914435983" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.facebook.com/bistrotarlesien" target="_blank" rel="noopener noreferrer">
                 <Button className="bg-terracotta/80 text-white px-8 py-6 text-lg hover:bg-terracotta transition-all font-semibold w-full md:w-auto">
                   <Facebook className="w-5 h-5 mr-2" />
                   Facebook - Bistrot Arlésien

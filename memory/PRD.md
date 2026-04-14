@@ -43,21 +43,33 @@ Create a one-page landing page for "Bistrot Arlésien", a Provençal bistro rest
 - Created Home.jsx component with all sections
 - Implemented fixed navigation with smooth scrolling
 - Designed hero section with restaurant facade image
-- Built identity section with story and images
+- Built identity section with melon & jambon de Parme image
 - Created three menu cards with pricing
-- Developed "La Carte" section with categorized dishes
+- **Developed full-width "La Carte" section with:**
+  - Elegant chocolate brown background (ardoise style)
+  - Dancing Script cursive font for category titles
+  - 2-column layout for better readability
+  - Dotted lines between dish names and prices
+  - All categories: Entrées, Plats, Burgers, Pizzas, Desserts
+  - Descriptions for burgers and pizzas
 - Implemented 8-image gallery grid with hover effects
 - Built contact section with:
   - Information card (terracotta background)
   - Night restaurant image
   - Three contact method cards
   - Google Maps integration
-  - Phone and Facebook CTA buttons
+  - Phone and Facebook CTA buttons (corrected Facebook link)
 - Added footer with restaurant branding
-- Configured custom Tailwind colors
-- Imported and configured Google Fonts
-- Implemented scroll animations (fade-in-up effect)
+- Configured custom Tailwind colors (cream, terracotta, chocolate)
+- Imported and configured Google Fonts (Playfair Display, Open Sans, Dancing Script)
+- Implemented smooth scroll animations with cubic-bezier easing
 - Used Lucide React icons (no emoji characters)
+
+**Corrections Applied:**
+- ✅ Facebook link updated to https://www.facebook.com/bistrotarlesien
+- ✅ Replaced AI-generated images with user-provided photos
+- ✅ Completely redesigned "La Carte" section with full-width elegant menu style
+- ✅ Improved animation smoothness (cubic-bezier transitions)
 
 ## Image Assets Used
 **User-Provided Images:**
