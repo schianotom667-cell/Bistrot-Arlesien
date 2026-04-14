@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Phone, MapPin, Facebook, Clock, Mail, Youtube } from 'lucide-react';
+import { Phone, MapPin, Facebook, Clock, UtensilsCrossed, ChefHat, Pizza } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 
@@ -120,32 +120,32 @@ const Home = () => {
 
   const galleryImages = [
     {
-      url: 'https://customer-assets.emergentagent.com/job_provence-dining/artifacts/6fnel6hl_69010301_888512718189279_4142079074581348352_n.jpg',
-      label: 'Entrée Melon Jambon'
+      url: 'https://customer-assets.emergentagent.com/job_provence-dining/artifacts/gsyxbdua_qzmlkjdlkqzjdklmjqz.webp',
+      label: 'Entrecôte Grillée'
     },
     {
-      url: 'https://customer-assets.emergentagent.com/job_provence-dining/artifacts/7xwrj3ae_53110846_776416286065590_1070365855151292416_n.jpg',
-      label: 'Petits Pains Maison'
+      url: 'https://customer-assets.emergentagent.com/job_provence-dining/artifacts/shf1k639_qlmkjzdlmkzqj.webp',
+      label: 'Salade Mixte'
+    },
+    {
+      url: 'https://customer-assets.emergentagent.com/job_provence-dining/artifacts/le1ab021_qljdlkzqjdkjq.webp',
+      label: 'Planche Charcuterie'
+    },
+    {
+      url: 'https://customer-assets.emergentagent.com/job_provence-dining/artifacts/bxuf54ug_dzqqqqqqqsdqs.webp',
+      label: 'Dessert Macaron'
+    },
+    {
+      url: 'https://customer-assets.emergentagent.com/job_provence-dining/artifacts/hap3ch6h_dzqqqqqqqzz.webp',
+      label: 'Pizza Jambon Cru'
     },
     {
       url: 'https://images.unsplash.com/photo-1550547660-d9450f859349',
       label: 'Burgers Gourmands'
     },
     {
-      url: 'https://customer-assets.emergentagent.com/job_5402dfc9-f18a-4ac1-918e-f12a259e280c/artifacts/wuf5qalk_unnamed%20%286%29.jpg',
-      label: 'Dessert Tiramisu'
-    },
-    {
-      url: 'https://customer-assets.emergentagent.com/job_5402dfc9-f18a-4ac1-918e-f12a259e280c/artifacts/eo8njvow_unnamed%20%287%29.jpg',
-      label: 'Pizza Maison'
-    },
-    {
       url: 'https://images.unsplash.com/photo-1600699899970-b1c9fadd8f9e',
       label: 'Poisson Grillé'
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1641209751671-d1cd7bedcd86',
-      label: 'Planche Bistrot'
     },
     {
       url: 'https://images.unsplash.com/photo-1608897013039-887f21d8c804',
@@ -169,7 +169,8 @@ const Home = () => {
           </div>
           <a href="tel:0490995193">
             <Button className="bg-terracotta text-white hover:bg-terracotta/90">
-              Réserver
+              <Phone className="w-4 h-4 mr-2" />
+              Appeler
             </Button>
           </a>
         </div>
@@ -246,29 +247,56 @@ const Home = () => {
       </section>
 
       {/* Section Menus */}
-      <section id="menus" className="py-20 bg-cream">
-        <div className="container mx-auto px-4">
+      <section id="menus" className="py-20 bg-cream relative">
+        {/* Background pattern */}
+        <div className="absolute inset-0 opacity-5" style={{
+          backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23CD6155" fill-opacity="1"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")'
+        }}></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
-            <h2 className="font-serif text-4xl md:text-5xl text-center mb-16 fade-in-up">
+            <h2 className="font-serif text-4xl md:text-5xl text-center mb-4 fade-in-up">
               Nos Menus : Simple, Bon, Fait Maison
             </h2>
+            <p className="text-center text-gray-600 mb-16 fade-in-up">Découvrez nos formules préparées avec amour</p>
+            
             <div className="grid md:grid-cols-3 gap-8">
-              {menuCards.map((menu, index) => (
-                <Card key={index} className="fade-in-up hover:shadow-xl transition-shadow bg-white">
-                  <CardContent className="p-8">
-                    <h3 className="font-serif text-2xl mb-4 text-terracotta">{menu.title}</h3>
-                    <div className="text-3xl font-bold mb-6 text-chocolate">{menu.price}</div>
-                    <ul className="space-y-3 text-gray-700">
-                      {menu.items.map((item, idx) => (
-                        <li key={idx}>• {item}</li>
-                      ))}
-                    </ul>
-                    <div className="mt-6 pt-4 border-t border-gray-200">
-                      <p className="text-sm text-gray-600 italic">{menu.note}</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+              {menuCards.map((menu, index) => {
+                const icons = [
+                  <ChefHat className="w-16 h-16 text-terracotta mx-auto mb-4" />,
+                  <UtensilsCrossed className="w-16 h-16 text-terracotta mx-auto mb-4" />,
+                  <Pizza className="w-16 h-16 text-terracotta mx-auto mb-4" />
+                ];
+                
+                return (
+                  <Card 
+                    key={index} 
+                    className="fade-in-up hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 bg-white border-2 border-terracotta/20"
+                    style={{
+                      backgroundImage: 'linear-gradient(to bottom, rgba(250, 246, 242, 0.5), rgba(255, 255, 255, 1))'
+                    }}
+                  >
+                    <CardContent className="p-8">
+                      <div className="text-center">
+                        {icons[index]}
+                        <h3 className="font-serif text-2xl mb-4 text-terracotta">{menu.title}</h3>
+                        <div className="text-4xl font-bold mb-6 text-chocolate">{menu.price}</div>
+                      </div>
+                      <div className="border-t-2 border-b-2 border-terracotta/20 py-4 mb-4">
+                        <ul className="space-y-3 text-gray-700">
+                          {menu.items.map((item, idx) => (
+                            <li key={idx} className="flex items-center">
+                              <span className="w-2 h-2 bg-terracotta rounded-full mr-3"></span>
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <p className="text-sm text-center text-terracotta font-semibold italic">{menu.note}</p>
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -438,8 +466,8 @@ const Home = () => {
             </div>
 
             {/* Contact Methods */}
-            <div className="grid md:grid-cols-4 gap-8 mb-12 fade-in-up">
-              <Card className="text-center p-6 shadow-md">
+            <div className="grid md:grid-cols-3 gap-8 mb-12 fade-in-up">
+              <Card className="text-center p-6 shadow-md hover:shadow-xl transition-shadow">
                 <CardContent className="pt-6">
                   <Phone className="w-12 h-12 mx-auto mb-4 text-terracotta" />
                   <h4 className="font-serif text-xl mb-2 text-terracotta">Par Téléphone</h4>
@@ -447,7 +475,7 @@ const Home = () => {
                 </CardContent>
               </Card>
               
-              <Card className="text-center p-6 shadow-md">
+              <Card className="text-center p-6 shadow-md hover:shadow-xl transition-shadow">
                 <CardContent className="pt-6">
                   <MapPin className="w-12 h-12 mx-auto mb-4 text-terracotta" />
                   <h4 className="font-serif text-xl mb-2 text-terracotta">Nous Trouver</h4>
@@ -455,19 +483,11 @@ const Home = () => {
                 </CardContent>
               </Card>
               
-              <Card className="text-center p-6 shadow-md">
+              <Card className="text-center p-6 shadow-md hover:shadow-xl transition-shadow">
                 <CardContent className="pt-6">
                   <Facebook className="w-12 h-12 mx-auto mb-4 text-terracotta" />
                   <h4 className="font-serif text-xl mb-2 text-terracotta">Sur Facebook</h4>
                   <p>Suivez notre page<br />Bistrot Arlésien</p>
-                </CardContent>
-              </Card>
-
-              <Card className="text-center p-6 shadow-md">
-                <CardContent className="pt-6">
-                  <Youtube className="w-12 h-12 mx-auto mb-4 text-red-600" />
-                  <h4 className="font-serif text-xl mb-2 text-red-600">Sur YouTube</h4>
-                  <p>Découvrez nos vidéos<br />Bistrot Arlésien</p>
                 </CardContent>
               </Card>
             </div>
@@ -491,21 +511,15 @@ const Home = () => {
             {/* Call to Action Buttons */}
             <div className="flex flex-col md:flex-row gap-4 justify-center fade-in-up">
               <a href="tel:0490995193">
-                <Button className="bg-terracotta text-white px-8 py-6 text-lg hover:bg-terracotta/90 transition-all font-semibold w-full md:w-auto">
+                <Button className="bg-terracotta text-white px-8 py-6 text-lg hover:bg-terracotta/90 transition-all font-semibold w-full md:w-auto shadow-lg hover:shadow-xl">
                   <Phone className="w-5 h-5 mr-2" />
                   Appeler - 04 90 99 51 93
                 </Button>
               </a>
               <a href="https://www.facebook.com/profile.php?id=100063914435983" target="_blank" rel="noopener noreferrer">
-                <Button className="bg-terracotta/80 text-white px-8 py-6 text-lg hover:bg-terracotta transition-all font-semibold w-full md:w-auto">
+                <Button className="bg-terracotta/80 text-white px-8 py-6 text-lg hover:bg-terracotta transition-all font-semibold w-full md:w-auto shadow-lg hover:shadow-xl">
                   <Facebook className="w-5 h-5 mr-2" />
                   Facebook
-                </Button>
-              </a>
-              <a href="https://www.youtube.com/@bistrotarlesien" target="_blank" rel="noopener noreferrer">
-                <Button className="bg-red-600 text-white px-8 py-6 text-lg hover:bg-red-700 transition-all font-semibold w-full md:w-auto">
-                  <Youtube className="w-5 h-5 mr-2" />
-                  YouTube
                 </Button>
               </a>
             </div>
