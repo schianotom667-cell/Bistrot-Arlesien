@@ -200,6 +200,20 @@ function showStatus(message, type) {
     statusDiv.classList.remove('hidden');
 }
 
+// FONCTION D'ENCODAGE UTF-8 INFAILLIBLE
+function stringToBase64UTF8(str) {
+    // Méthode la plus robuste : utiliser Blob
+    return new Promise((resolve) => {
+        const blob = new Blob([str], { type: 'text/plain;charset=utf-8' });
+        const reader = new FileReader();
+        reader.onloadend = () => {
+            const base64 = reader.result.split(',')[1];
+            resolve(base64);
+        };
+        reader.readAsDataURL(blob);
+    });
+}
+
 async function publishChanges() {
     const repo = localStorage.getItem('github_repo');
     const token = localStorage.getItem('github_token');
@@ -213,7 +227,7 @@ async function publishChanges() {
     showStatus('⏳ Récupération du fichier index.html...', 'info');
     
     try {
-        // 1. Récupérer le fichier index.html actuel avec décodage UTF-8 correct
+        // 1. Récupérer le fichier index.html actuel
         const getResponse = await fetch(`https://api.github.com/repos/${repo}/contents/index.html`, {
             headers: {
                 'Authorization': `token ${token}`,
@@ -227,13 +241,8 @@ async function publishChanges() {
         
         const fileData = await getResponse.json();
         
-        // DÉCODAGE UTF-8 CORRECT
-        const binaryString = atob(fileData.content);
-        const bytes = new Uint8Array(binaryString.length);
-        for (let i = 0; i < binaryString.length; i++) {
-            bytes[i] = binaryString.charCodeAt(i);
-        }
-        const currentContent = new TextDecoder('utf-8').decode(bytes);
+        // Décoder le contenu actuel (méthode native GitHub - déjà en UTF-8)
+        const currentContent = decodeURIComponent(escape(atob(fileData.content)));
         
         showStatus('⏳ Mise à jour des prix...', 'info');
         
@@ -246,7 +255,7 @@ async function publishChanges() {
         // 3. Modifier le contenu HTML
         let updatedContent = currentContent;
         
-        // Remplacer les prix des entrées (exemple pour la première)
+        // Remplacer les prix des entrées
         if (entreeNoms[0] && entreePrix[0]) {
             updatedContent = updatedContent.replace(
                 /<span class="text-lg">Foie Gras Maison<\/span>\s*<span class="flex-1[^>]*><\/span>\s*<span class="font-semibold text-lg">[^<]*<\/span>/,
@@ -265,23 +274,14 @@ async function publishChanges() {
         // Remplacer le prix du Menu Gourmet
         const prixGourmet = document.getElementById('prix-gourmet').value;
         updatedContent = updatedContent.replace(
-            /<div class="text-4xl font-bold mb-6 text-chocolate">25,90€<\/div>/,
+            /<div class="text-4xl font-bold mb-6 text-chocolate">[\d,]+€<\/div>/,
             `<div class="text-4xl font-bold mb-6 text-chocolate">${prixGourmet}</div>`
         );
         
-        showStatus('⏳ Envoi vers GitHub...', 'info');
+        showStatus('⏳ Encodage UTF-8 et envoi vers GitHub...', 'info');
         
-        // 4. ENCODAGE UTF-8 PARFAIT (avec gestion des gros fichiers)
-        const utf8Bytes = new TextEncoder().encode(updatedContent);
-        let binaryString = '';
-        const chunkSize = 32768;
-        
-        for (let i = 0; i < utf8Bytes.length; i += chunkSize) {
-            const chunk = utf8Bytes.subarray(i, Math.min(i + chunkSize, utf8Bytes.length));
-            binaryString += String.fromCharCode.apply(null, chunk);
-        }
-        
-        const base64Content = btoa(binaryString);
+        // 4. ENCODAGE UTF-8 INFAILLIBLE avec Blob
+        const base64Content = await stringToBase64UTF8(updatedContent);
         
         // 5. Envoyer la mise à jour
         const updateResponse = await fetch(`https://api.github.com/repos/${repo}/contents/index.html`, {
@@ -289,7 +289,7 @@ async function publishChanges() {
             headers: {
                 'Authorization': `token ${token}`,
                 'Accept': 'application/vnd.github.v3+json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json; charset=utf-8'
             },
             body: JSON.stringify({
                 message: 'Mise à jour des prix via admin',
@@ -302,7 +302,7 @@ async function publishChanges() {
             throw new Error(`Erreur lors de la mise à jour: ${updateResponse.status}`);
         }
         
-        showStatus('✅ Modifications publiées avec succès sur GitHub ! Votre site sera mis à jour dans quelques secondes.', 'success');
+        showStatus('✅ Modifications publiées avec succès sur GitHub ! Les accents et symboles € sont préservés.', 'success');
         
     } catch (error) {
         console.error(error);
