@@ -32,7 +32,7 @@
         <div class="bg-white p-8 rounded-b-xl shadow-lg">
             
             <!-- Configuration GitHub -->
-            <div id="github-config" class="mb-10 p-6 bg-blue-50 border-2 border-blue-200 rounded-lg">
+            <div class="mb-10 p-6 bg-blue-50 border-2 border-blue-200 rounded-lg">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-xl font-bold text-blue-900">🔐 Configuration GitHub</h2>
                     <button onclick="resetConfig()" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 text-sm">
@@ -79,6 +79,145 @@
                     <div class="border border-gray-200 rounded-lg p-4 bg-cream/30">
                         <h3 class="font-bold text-lg mb-3 text-terracotta">Menu Enfant</h3>
                         <input type="text" id="prix-enfant" value="10,50€" class="w-full p-2 border border-gray-300 rounded mb-2" placeholder="Prix">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section Entrées -->
+            <div class="mb-10">
+                <h2 class="text-2xl font-bold text-chocolate mb-6 border-b-2 border-terracotta pb-2">🥗 Entrées</h2>
+                <div class="space-y-3">
+                    <div class="flex gap-3">
+                        <input type="text" value="Foie Gras Maison" class="flex-1 p-2 border border-gray-300 rounded entree-nom" placeholder="Nom">
+                        <input type="text" value="16,90€" class="w-28 p-2 border border-gray-300 rounded entree-prix" placeholder="Prix">
+                    </div>
+                    <div class="flex gap-3">
+                        <input type="text" value="Planche Charcuterie" class="flex-1 p-2 border border-gray-300 rounded entree-nom" placeholder="Nom">
+                        <input type="text" value="12,50€" class="w-28 p-2 border border-gray-300 rounded entree-prix" placeholder="Prix">
+                    </div>
+                    <div class="flex gap-3">
+                        <input type="text" value="Salade de Chèvre Chaud" class="flex-1 p-2 border border-gray-300 rounded entree-nom" placeholder="Nom">
+                        <input type="text" value="11,90€" class="w-28 p-2 border border-gray-300 rounded entree-prix" placeholder="Prix">
+                    </div>
+                    <div class="flex gap-3">
+                        <input type="text" value="Tartare de Saumon" class="flex-1 p-2 border border-gray-300 rounded entree-nom" placeholder="Nom">
+                        <input type="text" value="13,50€" class="w-28 p-2 border border-gray-300 rounded entree-prix" placeholder="Prix">
+                    </div>
+                    <div class="flex gap-3">
+                        <input type="text" value="Carpaccio de Bœuf" class="flex-1 p-2 border border-gray-300 rounded entree-nom" placeholder="Nom">
+                        <input type="text" value="12,90€" class="w-28 p-2 border border-gray-300 rounded entree-prix" placeholder="Prix">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section Plats -->
+            <div class="mb-10">
+                <h2 class="text-2xl font-bold text-chocolate mb-6 border-b-2 border-terracotta pb-2">🍽️ Plats</h2>
+                <div class="space-y-3">
+                    <div class="flex gap-3">
+                        <input type="text" value="Magret de Canard" class="flex-1 p-2 border border-gray-300 rounded plat-nom" placeholder="Nom">
+                        <input type="text" value="21,00€" class="w-28 p-2 border border-gray-300 rounded plat-prix" placeholder="Prix">
+                    </div>
+                    <div class="flex gap-3">
+                        <input type="text" value="Dorade Grillée" class="flex-1 p-2 border border-gray-300 rounded plat-nom" placeholder="Nom">
+                        <input type="text" value="19,50€" class="w-28 p-2 border border-gray-300 rounded plat-prix" placeholder="Prix">
+                    </div>
+                    <div class="flex gap-3">
+                        <input type="text" value="Entrecôte Frites" class="flex-1 p-2 border border-gray-300 rounded plat-nom" placeholder="Nom">
+                        <input type="text" value="19,00€" class="w-28 p-2 border border-gray-300 rounded plat-prix" placeholder="Prix">
+                    </div>
+                    <div class="flex gap-3">
+                        <input type="text" value="Pavé de Saumon" class="flex-1 p-2 border border-gray-300 rounded plat-nom" placeholder="Nom">
+                        <input type="text" value="18,50€" class="w-28 p-2 border border-gray-300 rounded plat-prix" placeholder="Prix">
+                    </div>
+                    <div class="flex gap-3">
+                        <input type="text" value="Confit de Canard" class="flex-1 p-2 border border-gray-300 rounded plat-nom" placeholder="Nom">
+                        <input type="text" value="20,00€" class="w-28 p-2 border border-gray-300 rounded plat-prix" placeholder="Prix">
+                    </div>
+                    <div class="flex gap-3">
+                        <input type="text" value="Tartare de Bœuf" class="flex-1 p-2 border border-gray-300 rounded plat-nom" placeholder="Nom">
+                        <input type="text" value="15,90€" class="w-28 p-2 border border-gray-300 rounded plat-prix" placeholder="Prix">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section Burgers -->
+            <div class="mb-10">
+                <h2 class="text-2xl font-bold text-chocolate mb-6 border-b-2 border-terracotta pb-2">🍔 Burgers</h2>
+                <div class="space-y-3">
+                    <div class="flex gap-3">
+                        <input type="text" value="Le Rossini" class="w-48 p-2 border border-gray-300 rounded burger-nom" placeholder="Nom">
+                        <input type="text" value="Foie gras, confit d'oignons" class="flex-1 p-2 border border-gray-300 rounded burger-desc" placeholder="Description">
+                        <input type="text" value="17,90€" class="w-28 p-2 border border-gray-300 rounded burger-prix" placeholder="Prix">
+                    </div>
+                    <div class="flex gap-3">
+                        <input type="text" value="Le Royal Cheese" class="w-48 p-2 border border-gray-300 rounded burger-nom" placeholder="Nom">
+                        <input type="text" value="Double cheddar, bacon" class="flex-1 p-2 border border-gray-300 rounded burger-desc" placeholder="Description">
+                        <input type="text" value="15,90€" class="w-28 p-2 border border-gray-300 rounded burger-prix" placeholder="Prix">
+                    </div>
+                    <div class="flex gap-3">
+                        <input type="text" value="Le Provençal" class="w-48 p-2 border border-gray-300 rounded burger-nom" placeholder="Nom">
+                        <input type="text" value="Chèvre, miel, roquette" class="flex-1 p-2 border border-gray-300 rounded burger-desc" placeholder="Description">
+                        <input type="text" value="16,50€" class="w-28 p-2 border border-gray-300 rounded burger-prix" placeholder="Prix">
+                    </div>
+                    <div class="flex gap-3">
+                        <input type="text" value="Le Classic" class="w-48 p-2 border border-gray-300 rounded burger-nom" placeholder="Nom">
+                        <input type="text" value="Cheddar, salade, tomate" class="flex-1 p-2 border border-gray-300 rounded burger-desc" placeholder="Description">
+                        <input type="text" value="14,50€" class="w-28 p-2 border border-gray-300 rounded burger-prix" placeholder="Prix">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section Pizzas -->
+            <div class="mb-10">
+                <h2 class="text-2xl font-bold text-chocolate mb-6 border-b-2 border-terracotta pb-2">🍕 Pizzas</h2>
+                <div class="space-y-3">
+                    <div class="flex gap-3">
+                        <input type="text" value="Regina" class="w-48 p-2 border border-gray-300 rounded pizza-nom" placeholder="Nom">
+                        <input type="text" value="Jambon, champignons" class="flex-1 p-2 border border-gray-300 rounded pizza-desc" placeholder="Description">
+                        <input type="text" value="13,00€" class="w-28 p-2 border border-gray-300 rounded pizza-prix" placeholder="Prix">
+                    </div>
+                    <div class="flex gap-3">
+                        <input type="text" value="Provençale" class="w-48 p-2 border border-gray-300 rounded pizza-nom" placeholder="Nom">
+                        <input type="text" value="Légumes du soleil" class="flex-1 p-2 border border-gray-300 rounded pizza-desc" placeholder="Description">
+                        <input type="text" value="12,50€" class="w-28 p-2 border border-gray-300 rounded pizza-prix" placeholder="Prix">
+                    </div>
+                    <div class="flex gap-3">
+                        <input type="text" value="Quatre Fromages" class="w-48 p-2 border border-gray-300 rounded pizza-nom" placeholder="Nom">
+                        <input type="text" value="Mozzarella, chèvre, bleu, emmental" class="flex-1 p-2 border border-gray-300 rounded pizza-desc" placeholder="Description">
+                        <input type="text" value="14,00€" class="w-28 p-2 border border-gray-300 rounded pizza-prix" placeholder="Prix">
+                    </div>
+                    <div class="flex gap-3">
+                        <input type="text" value="Reine" class="w-48 p-2 border border-gray-300 rounded pizza-nom" placeholder="Nom">
+                        <input type="text" value="Jambon, olives, champignons" class="flex-1 p-2 border border-gray-300 rounded pizza-desc" placeholder="Description">
+                        <input type="text" value="13,50€" class="w-28 p-2 border border-gray-300 rounded pizza-prix" placeholder="Prix">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section Desserts -->
+            <div class="mb-10">
+                <h2 class="text-2xl font-bold text-chocolate mb-6 border-b-2 border-terracotta pb-2">🍰 Desserts</h2>
+                <div class="space-y-3">
+                    <div class="flex gap-3">
+                        <input type="text" value="Tiramisu Maison" class="flex-1 p-2 border border-gray-300 rounded dessert-nom" placeholder="Nom">
+                        <input type="text" value="7,50€" class="w-28 p-2 border border-gray-300 rounded dessert-prix" placeholder="Prix">
+                    </div>
+                    <div class="flex gap-3">
+                        <input type="text" value="Crème Brûlée" class="flex-1 p-2 border border-gray-300 rounded dessert-nom" placeholder="Nom">
+                        <input type="text" value="7,00€" class="w-28 p-2 border border-gray-300 rounded dessert-prix" placeholder="Prix">
+                    </div>
+                    <div class="flex gap-3">
+                        <input type="text" value="Tarte Tatin" class="flex-1 p-2 border border-gray-300 rounded dessert-nom" placeholder="Nom">
+                        <input type="text" value="8,00€" class="w-28 p-2 border border-gray-300 rounded dessert-prix" placeholder="Prix">
+                    </div>
+                    <div class="flex gap-3">
+                        <input type="text" value="Coupe Glacée" class="flex-1 p-2 border border-gray-300 rounded dessert-nom" placeholder="Nom">
+                        <input type="text" value="6,50€" class="w-28 p-2 border border-gray-300 rounded dessert-prix" placeholder="Prix">
+                    </div>
+                    <div class="flex gap-3">
+                        <input type="text" value="Fondant au Chocolat" class="flex-1 p-2 border border-gray-300 rounded dessert-nom" placeholder="Nom">
+                        <input type="text" value="8,50€" class="w-28 p-2 border border-gray-300 rounded dessert-prix" placeholder="Prix">
                     </div>
                 </div>
             </div>
@@ -164,8 +303,8 @@ async function saveChanges() {
     console.log('[Admin] Config GitHub:', { repo, tokenLength: token.length });
     
     try {
-        // 1. Récupérer le fichier index.html depuis GitHub
-        console.log('[Admin] Récupération de index.html depuis GitHub...');
+        // 1. RÉCUPÉRER LE SHA ACTUEL (ÉVITE L'ERREUR 409)
+        console.log('[Admin] Récupération du SHA actuel depuis GitHub...');
         const getResponse = await fetch(`https://api.github.com/repos/${repo}/contents/index.html`, {
             headers: {
                 'Authorization': `token ${token}`,
@@ -179,7 +318,8 @@ async function saveChanges() {
         }
         
         const fileData = await getResponse.json();
-        console.log('[Admin] Fichier récupéré, SHA:', fileData.sha);
+        const currentSHA = fileData.sha;
+        console.log('[Admin] SHA actuel récupéré:', currentSHA);
         
         // Décoder le contenu actuel
         const binaryString = atob(fileData.content);
@@ -196,7 +336,7 @@ async function saveChanges() {
         const prixBistrot = document.getElementById('prix-bistrot').value;
         const prixEnfant = document.getElementById('prix-enfant').value;
         
-        console.log('[Admin] Nouveaux prix:', { gourmet: prixGourmet, bistrot: prixBistrot, enfant: prixEnfant });
+        console.log('[Admin] Nouveaux prix menus:', { gourmet: prixGourmet, bistrot: prixBistrot, enfant: prixEnfant });
         
         // 3. Remplacer les prix dans le HTML
         // Menu Gourmet
@@ -204,8 +344,6 @@ async function saveChanges() {
         if (gourmetRegex.test(currentContent)) {
             currentContent = currentContent.replace(gourmetRegex, `$1${prixGourmet}$2`);
             console.log('[Admin] ✓ Menu Gourmet remplacé');
-        } else {
-            console.warn('[Admin] ✗ Menu Gourmet non trouvé');
         }
         
         // Menu Bistrot
@@ -213,8 +351,6 @@ async function saveChanges() {
         if (bistrotRegex.test(currentContent)) {
             currentContent = currentContent.replace(bistrotRegex, `$1${prixBistrot}$2`);
             console.log('[Admin] ✓ Menu Bistrot remplacé');
-        } else {
-            console.warn('[Admin] ✗ Menu Bistrot non trouvé');
         }
         
         // Menu Enfant
@@ -222,8 +358,6 @@ async function saveChanges() {
         if (enfantRegex.test(currentContent)) {
             currentContent = currentContent.replace(enfantRegex, `$1${prixEnfant}$2`);
             console.log('[Admin] ✓ Menu Enfant remplacé');
-        } else {
-            console.warn('[Admin] ✗ Menu Enfant non trouvé');
         }
         
         // 4. Encoder en UTF-8 puis Base64
@@ -238,10 +372,10 @@ async function saveChanges() {
         }
         
         const base64Content = btoa(binaryStr);
-        console.log('[Admin] Encodage terminé, taille base64:', base64Content.length);
+        console.log('[Admin] Encodage terminé');
         
-        // 5. Envoyer la mise à jour à GitHub
-        console.log('[Admin] Envoi vers GitHub...');
+        // 5. Envoyer la mise à jour à GitHub AVEC LE SHA ACTUEL
+        console.log('[Admin] Envoi vers GitHub avec SHA:', currentSHA);
         const updateResponse = await fetch(`https://api.github.com/repos/${repo}/contents/index.html`, {
             method: 'PUT',
             headers: {
@@ -252,7 +386,7 @@ async function saveChanges() {
             body: JSON.stringify({
                 message: 'Mise à jour des prix via admin',
                 content: base64Content,
-                sha: fileData.sha
+                sha: currentSHA
             })
         });
         
