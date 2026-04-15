@@ -22,11 +22,11 @@
 <body class="bg-gray-50">
 
 <div class="min-h-screen py-12 px-4">
-    <div class="max-w-5xl mx-auto">
+    <div class="max-w-6xl mx-auto">
         <!-- Header -->
         <div class="bg-terracotta text-white p-6 rounded-t-xl shadow-lg">
-            <h1 class="text-3xl font-bold">Administration - Bistrot Arlésien</h1>
-            <p class="mt-2 opacity-90">Gestion des menus et tarifs en direct</p>
+            <h1 class="text-3xl font-bold">🔐 Administration - Bistrot Arlésien</h1>
+            <p class="mt-2 opacity-90">Gestion complète de votre restaurant</p>
         </div>
 
         <div class="bg-white p-8 rounded-b-xl shadow-lg">
@@ -66,19 +66,19 @@
                     <!-- Menu Gourmet -->
                     <div class="border border-gray-200 rounded-lg p-4 bg-cream/30">
                         <h3 class="font-bold text-lg mb-3 text-terracotta">Menu Gourmet</h3>
-                        <input type="text" id="prix-gourmet" value="25,90€" class="w-full p-2 border border-gray-300 rounded mb-2" placeholder="Prix">
+                        <input type="text" id="prix-gourmet" value="25,90€" class="w-full p-2 border border-gray-300 rounded" placeholder="Prix (ex: 25,90€)">
                     </div>
 
                     <!-- Menu Bistrot -->
                     <div class="border border-gray-200 rounded-lg p-4 bg-cream/30">
                         <h3 class="font-bold text-lg mb-3 text-terracotta">Menu Bistrot</h3>
-                        <input type="text" id="prix-bistrot" value="15,90€" class="w-full p-2 border border-gray-300 rounded mb-2" placeholder="Prix">
+                        <input type="text" id="prix-bistrot" value="15,90€" class="w-full p-2 border border-gray-300 rounded" placeholder="Prix (ex: 15,90€)">
                     </div>
 
                     <!-- Menu Enfant -->
                     <div class="border border-gray-200 rounded-lg p-4 bg-cream/30">
                         <h3 class="font-bold text-lg mb-3 text-terracotta">Menu Enfant</h3>
-                        <input type="text" id="prix-enfant" value="10,50€" class="w-full p-2 border border-gray-300 rounded mb-2" placeholder="Prix">
+                        <input type="text" id="prix-enfant" value="10,50€" class="w-full p-2 border border-gray-300 rounded" placeholder="Prix (ex: 10,50€)">
                     </div>
                 </div>
             </div>
@@ -87,25 +87,25 @@
             <div class="mb-10">
                 <h2 class="text-2xl font-bold text-chocolate mb-6 border-b-2 border-terracotta pb-2">🥗 Entrées</h2>
                 <div class="space-y-3">
-                    <div class="flex gap-3">
-                        <input type="text" value="Foie Gras Maison" class="flex-1 p-2 border border-gray-300 rounded entree-nom" placeholder="Nom">
-                        <input type="text" value="16,90€" class="w-28 p-2 border border-gray-300 rounded entree-prix" placeholder="Prix">
+                    <div class="grid grid-cols-12 gap-3">
+                        <input type="text" value="Foie Gras Maison" class="col-span-8 p-2 border border-gray-300 rounded" data-id="entree-1-nom">
+                        <input type="text" value="16,90€" class="col-span-4 p-2 border border-gray-300 rounded" data-id="entree-1-prix">
                     </div>
-                    <div class="flex gap-3">
-                        <input type="text" value="Planche Charcuterie" class="flex-1 p-2 border border-gray-300 rounded entree-nom" placeholder="Nom">
-                        <input type="text" value="12,50€" class="w-28 p-2 border border-gray-300 rounded entree-prix" placeholder="Prix">
+                    <div class="grid grid-cols-12 gap-3">
+                        <input type="text" value="Planche Charcuterie" class="col-span-8 p-2 border border-gray-300 rounded" data-id="entree-2-nom">
+                        <input type="text" value="12,50€" class="col-span-4 p-2 border border-gray-300 rounded" data-id="entree-2-prix">
                     </div>
-                    <div class="flex gap-3">
-                        <input type="text" value="Salade de Chèvre Chaud" class="flex-1 p-2 border border-gray-300 rounded entree-nom" placeholder="Nom">
-                        <input type="text" value="11,90€" class="w-28 p-2 border border-gray-300 rounded entree-prix" placeholder="Prix">
+                    <div class="grid grid-cols-12 gap-3">
+                        <input type="text" value="Salade de Chèvre Chaud" class="col-span-8 p-2 border border-gray-300 rounded" data-id="entree-3-nom">
+                        <input type="text" value="11,90€" class="col-span-4 p-2 border border-gray-300 rounded" data-id="entree-3-prix">
                     </div>
-                    <div class="flex gap-3">
-                        <input type="text" value="Tartare de Saumon" class="flex-1 p-2 border border-gray-300 rounded entree-nom" placeholder="Nom">
-                        <input type="text" value="13,50€" class="w-28 p-2 border border-gray-300 rounded entree-prix" placeholder="Prix">
+                    <div class="grid grid-cols-12 gap-3">
+                        <input type="text" value="Tartare de Saumon" class="col-span-8 p-2 border border-gray-300 rounded" data-id="entree-4-nom">
+                        <input type="text" value="13,50€" class="col-span-4 p-2 border border-gray-300 rounded" data-id="entree-4-prix">
                     </div>
-                    <div class="flex gap-3">
-                        <input type="text" value="Carpaccio de Bœuf" class="flex-1 p-2 border border-gray-300 rounded entree-nom" placeholder="Nom">
-                        <input type="text" value="12,90€" class="w-28 p-2 border border-gray-300 rounded entree-prix" placeholder="Prix">
+                    <div class="grid grid-cols-12 gap-3">
+                        <input type="text" value="Carpaccio de Bœuf" class="col-span-8 p-2 border border-gray-300 rounded" data-id="entree-5-nom">
+                        <input type="text" value="12,90€" class="col-span-4 p-2 border border-gray-300 rounded" data-id="entree-5-prix">
                     </div>
                 </div>
             </div>
@@ -114,29 +114,29 @@
             <div class="mb-10">
                 <h2 class="text-2xl font-bold text-chocolate mb-6 border-b-2 border-terracotta pb-2">🍽️ Plats</h2>
                 <div class="space-y-3">
-                    <div class="flex gap-3">
-                        <input type="text" value="Magret de Canard" class="flex-1 p-2 border border-gray-300 rounded plat-nom" placeholder="Nom">
-                        <input type="text" value="21,00€" class="w-28 p-2 border border-gray-300 rounded plat-prix" placeholder="Prix">
+                    <div class="grid grid-cols-12 gap-3">
+                        <input type="text" value="Magret de Canard" class="col-span-8 p-2 border border-gray-300 rounded" data-id="plat-1-nom">
+                        <input type="text" value="21,00€" class="col-span-4 p-2 border border-gray-300 rounded" data-id="plat-1-prix">
                     </div>
-                    <div class="flex gap-3">
-                        <input type="text" value="Dorade Grillée" class="flex-1 p-2 border border-gray-300 rounded plat-nom" placeholder="Nom">
-                        <input type="text" value="19,50€" class="w-28 p-2 border border-gray-300 rounded plat-prix" placeholder="Prix">
+                    <div class="grid grid-cols-12 gap-3">
+                        <input type="text" value="Dorade Grillée" class="col-span-8 p-2 border border-gray-300 rounded" data-id="plat-2-nom">
+                        <input type="text" value="19,50€" class="col-span-4 p-2 border border-gray-300 rounded" data-id="plat-2-prix">
                     </div>
-                    <div class="flex gap-3">
-                        <input type="text" value="Entrecôte Frites" class="flex-1 p-2 border border-gray-300 rounded plat-nom" placeholder="Nom">
-                        <input type="text" value="19,00€" class="w-28 p-2 border border-gray-300 rounded plat-prix" placeholder="Prix">
+                    <div class="grid grid-cols-12 gap-3">
+                        <input type="text" value="Entrecôte Frites" class="col-span-8 p-2 border border-gray-300 rounded" data-id="plat-3-nom">
+                        <input type="text" value="19,00€" class="col-span-4 p-2 border border-gray-300 rounded" data-id="plat-3-prix">
                     </div>
-                    <div class="flex gap-3">
-                        <input type="text" value="Pavé de Saumon" class="flex-1 p-2 border border-gray-300 rounded plat-nom" placeholder="Nom">
-                        <input type="text" value="18,50€" class="w-28 p-2 border border-gray-300 rounded plat-prix" placeholder="Prix">
+                    <div class="grid grid-cols-12 gap-3">
+                        <input type="text" value="Pavé de Saumon" class="col-span-8 p-2 border border-gray-300 rounded" data-id="plat-4-nom">
+                        <input type="text" value="18,50€" class="col-span-4 p-2 border border-gray-300 rounded" data-id="plat-4-prix">
                     </div>
-                    <div class="flex gap-3">
-                        <input type="text" value="Confit de Canard" class="flex-1 p-2 border border-gray-300 rounded plat-nom" placeholder="Nom">
-                        <input type="text" value="20,00€" class="w-28 p-2 border border-gray-300 rounded plat-prix" placeholder="Prix">
+                    <div class="grid grid-cols-12 gap-3">
+                        <input type="text" value="Confit de Canard" class="col-span-8 p-2 border border-gray-300 rounded" data-id="plat-5-nom">
+                        <input type="text" value="20,00€" class="col-span-4 p-2 border border-gray-300 rounded" data-id="plat-5-prix">
                     </div>
-                    <div class="flex gap-3">
-                        <input type="text" value="Tartare de Bœuf" class="flex-1 p-2 border border-gray-300 rounded plat-nom" placeholder="Nom">
-                        <input type="text" value="15,90€" class="w-28 p-2 border border-gray-300 rounded plat-prix" placeholder="Prix">
+                    <div class="grid grid-cols-12 gap-3">
+                        <input type="text" value="Tartare de Bœuf" class="col-span-8 p-2 border border-gray-300 rounded" data-id="plat-6-nom">
+                        <input type="text" value="15,90€" class="col-span-4 p-2 border border-gray-300 rounded" data-id="plat-6-prix">
                     </div>
                 </div>
             </div>
@@ -145,25 +145,25 @@
             <div class="mb-10">
                 <h2 class="text-2xl font-bold text-chocolate mb-6 border-b-2 border-terracotta pb-2">🍔 Burgers</h2>
                 <div class="space-y-3">
-                    <div class="flex gap-3">
-                        <input type="text" value="Le Rossini" class="w-48 p-2 border border-gray-300 rounded burger-nom" placeholder="Nom">
-                        <input type="text" value="Foie gras, confit d'oignons" class="flex-1 p-2 border border-gray-300 rounded burger-desc" placeholder="Description">
-                        <input type="text" value="17,90€" class="w-28 p-2 border border-gray-300 rounded burger-prix" placeholder="Prix">
+                    <div class="grid grid-cols-12 gap-3">
+                        <input type="text" value="Le Rossini" class="col-span-4 p-2 border border-gray-300 rounded" data-id="burger-1-nom">
+                        <input type="text" value="Foie gras, confit d'oignons" class="col-span-5 p-2 border border-gray-300 rounded" data-id="burger-1-desc">
+                        <input type="text" value="17,90€" class="col-span-3 p-2 border border-gray-300 rounded" data-id="burger-1-prix">
                     </div>
-                    <div class="flex gap-3">
-                        <input type="text" value="Le Royal Cheese" class="w-48 p-2 border border-gray-300 rounded burger-nom" placeholder="Nom">
-                        <input type="text" value="Double cheddar, bacon" class="flex-1 p-2 border border-gray-300 rounded burger-desc" placeholder="Description">
-                        <input type="text" value="15,90€" class="w-28 p-2 border border-gray-300 rounded burger-prix" placeholder="Prix">
+                    <div class="grid grid-cols-12 gap-3">
+                        <input type="text" value="Le Royal Cheese" class="col-span-4 p-2 border border-gray-300 rounded" data-id="burger-2-nom">
+                        <input type="text" value="Double cheddar, bacon" class="col-span-5 p-2 border border-gray-300 rounded" data-id="burger-2-desc">
+                        <input type="text" value="15,90€" class="col-span-3 p-2 border border-gray-300 rounded" data-id="burger-2-prix">
                     </div>
-                    <div class="flex gap-3">
-                        <input type="text" value="Le Provençal" class="w-48 p-2 border border-gray-300 rounded burger-nom" placeholder="Nom">
-                        <input type="text" value="Chèvre, miel, roquette" class="flex-1 p-2 border border-gray-300 rounded burger-desc" placeholder="Description">
-                        <input type="text" value="16,50€" class="w-28 p-2 border border-gray-300 rounded burger-prix" placeholder="Prix">
+                    <div class="grid grid-cols-12 gap-3">
+                        <input type="text" value="Le Provençal" class="col-span-4 p-2 border border-gray-300 rounded" data-id="burger-3-nom">
+                        <input type="text" value="Chèvre, miel, roquette" class="col-span-5 p-2 border border-gray-300 rounded" data-id="burger-3-desc">
+                        <input type="text" value="16,50€" class="col-span-3 p-2 border border-gray-300 rounded" data-id="burger-3-prix">
                     </div>
-                    <div class="flex gap-3">
-                        <input type="text" value="Le Classic" class="w-48 p-2 border border-gray-300 rounded burger-nom" placeholder="Nom">
-                        <input type="text" value="Cheddar, salade, tomate" class="flex-1 p-2 border border-gray-300 rounded burger-desc" placeholder="Description">
-                        <input type="text" value="14,50€" class="w-28 p-2 border border-gray-300 rounded burger-prix" placeholder="Prix">
+                    <div class="grid grid-cols-12 gap-3">
+                        <input type="text" value="Le Classic" class="col-span-4 p-2 border border-gray-300 rounded" data-id="burger-4-nom">
+                        <input type="text" value="Cheddar, salade, tomate" class="col-span-5 p-2 border border-gray-300 rounded" data-id="burger-4-desc">
+                        <input type="text" value="14,50€" class="col-span-3 p-2 border border-gray-300 rounded" data-id="burger-4-prix">
                     </div>
                 </div>
             </div>
@@ -172,25 +172,25 @@
             <div class="mb-10">
                 <h2 class="text-2xl font-bold text-chocolate mb-6 border-b-2 border-terracotta pb-2">🍕 Pizzas</h2>
                 <div class="space-y-3">
-                    <div class="flex gap-3">
-                        <input type="text" value="Regina" class="w-48 p-2 border border-gray-300 rounded pizza-nom" placeholder="Nom">
-                        <input type="text" value="Jambon, champignons" class="flex-1 p-2 border border-gray-300 rounded pizza-desc" placeholder="Description">
-                        <input type="text" value="13,00€" class="w-28 p-2 border border-gray-300 rounded pizza-prix" placeholder="Prix">
+                    <div class="grid grid-cols-12 gap-3">
+                        <input type="text" value="Regina" class="col-span-4 p-2 border border-gray-300 rounded" data-id="pizza-1-nom">
+                        <input type="text" value="Jambon, champignons" class="col-span-5 p-2 border border-gray-300 rounded" data-id="pizza-1-desc">
+                        <input type="text" value="13,00€" class="col-span-3 p-2 border border-gray-300 rounded" data-id="pizza-1-prix">
                     </div>
-                    <div class="flex gap-3">
-                        <input type="text" value="Provençale" class="w-48 p-2 border border-gray-300 rounded pizza-nom" placeholder="Nom">
-                        <input type="text" value="Légumes du soleil" class="flex-1 p-2 border border-gray-300 rounded pizza-desc" placeholder="Description">
-                        <input type="text" value="12,50€" class="w-28 p-2 border border-gray-300 rounded pizza-prix" placeholder="Prix">
+                    <div class="grid grid-cols-12 gap-3">
+                        <input type="text" value="Provençale" class="col-span-4 p-2 border border-gray-300 rounded" data-id="pizza-2-nom">
+                        <input type="text" value="Légumes du soleil" class="col-span-5 p-2 border border-gray-300 rounded" data-id="pizza-2-desc">
+                        <input type="text" value="12,50€" class="col-span-3 p-2 border border-gray-300 rounded" data-id="pizza-2-prix">
                     </div>
-                    <div class="flex gap-3">
-                        <input type="text" value="Quatre Fromages" class="w-48 p-2 border border-gray-300 rounded pizza-nom" placeholder="Nom">
-                        <input type="text" value="Mozzarella, chèvre, bleu, emmental" class="flex-1 p-2 border border-gray-300 rounded pizza-desc" placeholder="Description">
-                        <input type="text" value="14,00€" class="w-28 p-2 border border-gray-300 rounded pizza-prix" placeholder="Prix">
+                    <div class="grid grid-cols-12 gap-3">
+                        <input type="text" value="Quatre Fromages" class="col-span-4 p-2 border border-gray-300 rounded" data-id="pizza-3-nom">
+                        <input type="text" value="Mozzarella, chèvre, bleu, emmental" class="col-span-5 p-2 border border-gray-300 rounded" data-id="pizza-3-desc">
+                        <input type="text" value="14,00€" class="col-span-3 p-2 border border-gray-300 rounded" data-id="pizza-3-prix">
                     </div>
-                    <div class="flex gap-3">
-                        <input type="text" value="Reine" class="w-48 p-2 border border-gray-300 rounded pizza-nom" placeholder="Nom">
-                        <input type="text" value="Jambon, olives, champignons" class="flex-1 p-2 border border-gray-300 rounded pizza-desc" placeholder="Description">
-                        <input type="text" value="13,50€" class="w-28 p-2 border border-gray-300 rounded pizza-prix" placeholder="Prix">
+                    <div class="grid grid-cols-12 gap-3">
+                        <input type="text" value="Reine" class="col-span-4 p-2 border border-gray-300 rounded" data-id="pizza-4-nom">
+                        <input type="text" value="Jambon, olives, champignons" class="col-span-5 p-2 border border-gray-300 rounded" data-id="pizza-4-desc">
+                        <input type="text" value="13,50€" class="col-span-3 p-2 border border-gray-300 rounded" data-id="pizza-4-prix">
                     </div>
                 </div>
             </div>
@@ -199,25 +199,25 @@
             <div class="mb-10">
                 <h2 class="text-2xl font-bold text-chocolate mb-6 border-b-2 border-terracotta pb-2">🍰 Desserts</h2>
                 <div class="space-y-3">
-                    <div class="flex gap-3">
-                        <input type="text" value="Tiramisu Maison" class="flex-1 p-2 border border-gray-300 rounded dessert-nom" placeholder="Nom">
-                        <input type="text" value="7,50€" class="w-28 p-2 border border-gray-300 rounded dessert-prix" placeholder="Prix">
+                    <div class="grid grid-cols-12 gap-3">
+                        <input type="text" value="Tiramisu Maison" class="col-span-8 p-2 border border-gray-300 rounded" data-id="dessert-1-nom">
+                        <input type="text" value="7,50€" class="col-span-4 p-2 border border-gray-300 rounded" data-id="dessert-1-prix">
                     </div>
-                    <div class="flex gap-3">
-                        <input type="text" value="Crème Brûlée" class="flex-1 p-2 border border-gray-300 rounded dessert-nom" placeholder="Nom">
-                        <input type="text" value="7,00€" class="w-28 p-2 border border-gray-300 rounded dessert-prix" placeholder="Prix">
+                    <div class="grid grid-cols-12 gap-3">
+                        <input type="text" value="Crème Brûlée" class="col-span-8 p-2 border border-gray-300 rounded" data-id="dessert-2-nom">
+                        <input type="text" value="7,00€" class="col-span-4 p-2 border border-gray-300 rounded" data-id="dessert-2-prix">
                     </div>
-                    <div class="flex gap-3">
-                        <input type="text" value="Tarte Tatin" class="flex-1 p-2 border border-gray-300 rounded dessert-nom" placeholder="Nom">
-                        <input type="text" value="8,00€" class="w-28 p-2 border border-gray-300 rounded dessert-prix" placeholder="Prix">
+                    <div class="grid grid-cols-12 gap-3">
+                        <input type="text" value="Tarte Tatin" class="col-span-8 p-2 border border-gray-300 rounded" data-id="dessert-3-nom">
+                        <input type="text" value="8,00€" class="col-span-4 p-2 border border-gray-300 rounded" data-id="dessert-3-prix">
                     </div>
-                    <div class="flex gap-3">
-                        <input type="text" value="Coupe Glacée" class="flex-1 p-2 border border-gray-300 rounded dessert-nom" placeholder="Nom">
-                        <input type="text" value="6,50€" class="w-28 p-2 border border-gray-300 rounded dessert-prix" placeholder="Prix">
+                    <div class="grid grid-cols-12 gap-3">
+                        <input type="text" value="Coupe Glacée" class="col-span-8 p-2 border border-gray-300 rounded" data-id="dessert-4-nom">
+                        <input type="text" value="6,50€" class="col-span-4 p-2 border border-gray-300 rounded" data-id="dessert-4-prix">
                     </div>
-                    <div class="flex gap-3">
-                        <input type="text" value="Fondant au Chocolat" class="flex-1 p-2 border border-gray-300 rounded dessert-nom" placeholder="Nom">
-                        <input type="text" value="8,50€" class="w-28 p-2 border border-gray-300 rounded dessert-prix" placeholder="Prix">
+                    <div class="grid grid-cols-12 gap-3">
+                        <input type="text" value="Fondant au Chocolat" class="col-span-8 p-2 border border-gray-300 rounded" data-id="dessert-5-nom">
+                        <input type="text" value="8,50€" class="col-span-4 p-2 border border-gray-300 rounded" data-id="dessert-5-prix">
                     </div>
                 </div>
             </div>
@@ -228,7 +228,7 @@
                     🚀 Enregistrer et publier sur GitHub
                 </button>
                 <a href="index.html" class="flex-1">
-                    <button class="w-full bg-gray-600 text-white py-4 rounded-lg hover:bg-gray-700 font-bold text-lg shadow-lg transition-all">
+                    <button type="button" class="w-full bg-gray-600 text-white py-4 rounded-lg hover:bg-gray-700 font-bold text-lg shadow-lg transition-all">
                         ← Retour au site
                     </button>
                 </a>
@@ -236,7 +236,7 @@
 
             <!-- Status -->
             <div id="status" class="mt-6 p-4 rounded-lg bg-gray-100 text-gray-700">
-                <p>💡 <strong>Prêt.</strong> Configurez GitHub ci-dessus, puis modifiez les prix et cliquez sur "Enregistrer".</p>
+                <p>💡 <strong>Prêt.</strong> Modifiez vos plats et prix ci-dessus, puis cliquez sur "Enregistrer".</p>
             </div>
         </div>
     </div>
@@ -272,7 +272,7 @@ function saveGitHubConfig() {
     localStorage.setItem('github_repo', repo);
     localStorage.setItem('github_token', token);
     
-    alert(`✅ SUCCÈS : Configuration GitHub sauvegardée !\n\nDépôt : ${repo}\n\nVous pouvez maintenant modifier les prix et cliquer sur "Enregistrer".`);
+    alert(`✅ SUCCÈS : Configuration GitHub sauvegardée !\n\nDépôt : ${repo}`);
 }
 
 // Charger la config au démarrage
@@ -288,23 +288,20 @@ window.onload = function() {
 
 // FONCTION PRINCIPALE DE SAUVEGARDE
 async function saveChanges() {
-    // ALERTE IMMÉDIATE
-    alert('🚀 Début de sauvegarde...\n\nConnexion à GitHub en cours.');
+    alert('🚀 Début de sauvegarde...');
     console.log('[Admin] Fonction saveChanges() appelée');
     
     const repo = localStorage.getItem('github_repo');
     const token = localStorage.getItem('github_token');
     
     if (!repo || !token) {
-        alert('❌ ERREUR : Configuration GitHub manquante !\n\nVeuillez remplir le nom du dépôt et le token GitHub dans le bloc bleu ci-dessus.');
+        alert('❌ ERREUR : Configuration GitHub manquante !');
         return;
     }
     
-    console.log('[Admin] Config GitHub:', { repo, tokenLength: token.length });
-    
     try {
-        // 1. RÉCUPÉRER LE SHA ACTUEL (ÉVITE L'ERREUR 409)
-        console.log('[Admin] Récupération du SHA actuel depuis GitHub...');
+        // 1. RÉCUPÉRER LE SHA ACTUEL
+        console.log('[Admin] Récupération du SHA actuel...');
         const getResponse = await fetch(`https://api.github.com/repos/${repo}/contents/index.html`, {
             headers: {
                 'Authorization': `token ${token}`,
@@ -319,7 +316,6 @@ async function saveChanges() {
         
         const fileData = await getResponse.json();
         const currentSHA = fileData.sha;
-        console.log('[Admin] SHA actuel récupéré:', currentSHA);
         
         // Décoder le contenu actuel
         const binaryString = atob(fileData.content);
@@ -327,42 +323,132 @@ async function saveChanges() {
         for (let i = 0; i < binaryString.length; i++) {
             bytes[i] = binaryString.charCodeAt(i);
         }
-        let currentContent = new TextDecoder('utf-8').decode(bytes);
+        let content = new TextDecoder('utf-8').decode(bytes);
         
-        console.log('[Admin] Contenu décodé, taille:', currentContent.length);
-        
-        // 2. Récupérer les nouveaux prix
+        // 2. REMPLACER LES PRIX DES MENUS (sans double €)
         const prixGourmet = document.getElementById('prix-gourmet').value;
         const prixBistrot = document.getElementById('prix-bistrot').value;
         const prixEnfant = document.getElementById('prix-enfant').value;
         
-        console.log('[Admin] Nouveaux prix menus:', { gourmet: prixGourmet, bistrot: prixBistrot, enfant: prixEnfant });
+        content = content.replace(
+            /(<h3 class="font-serif text-2xl mb-4 text-terracotta">Menu Gourmet<\/h3>\s*<div class="text-4xl font-bold mb-6 text-chocolate">)[^<]+(<\/div>)/,
+            `$1${prixGourmet}$2`
+        );
         
-        // 3. Remplacer les prix dans le HTML
-        // Menu Gourmet
-        const gourmetRegex = /(<h3 class="font-serif text-2xl mb-4 text-terracotta">Menu Gourmet<\/h3>\s*<div class="text-4xl font-bold mb-6 text-chocolate">)[^<]+(€<\/div>)/;
-        if (gourmetRegex.test(currentContent)) {
-            currentContent = currentContent.replace(gourmetRegex, `$1${prixGourmet}$2`);
-            console.log('[Admin] ✓ Menu Gourmet remplacé');
+        content = content.replace(
+            /(<h3 class="font-serif text-2xl mb-4 text-terracotta">Menu Bistrot<\/h3>\s*<div class="text-4xl font-bold mb-6 text-chocolate">)[^<]+(<\/div>)/,
+            `$1${prixBistrot}$2`
+        );
+        
+        content = content.replace(
+            /(<h3 class="font-serif text-2xl mb-4 text-terracotta">Menu Enfant<\/h3>\s*<div class="text-4xl font-bold mb-6 text-chocolate">)[^<]+(<\/div>)/,
+            `$1${prixEnfant}$2`
+        );
+        
+        // 3. REMPLACER LES ENTRÉES
+        for (let i = 1; i <= 5; i++) {
+            const nom = document.querySelector(`[data-id="entree-${i}-nom"]`)?.value;
+            const prix = document.querySelector(`[data-id="entree-${i}-prix"]`)?.value;
+            
+            if (nom && prix) {
+                const oldNom = content.match(new RegExp(`<span class="text-lg">([^<]+)<\\/span>\\s*<span class="flex-1[^>]*><\\/span>\\s*<span class="font-semibold text-lg">[^<]+<\\/span>`, 'g'))?.[i-1];
+                if (oldNom) {
+                    content = content.replace(
+                        oldNom,
+                        `<span class="text-lg">${nom}</span>\n                                    <span class="flex-1 mx-3 border-b border-dotted border-cream/30"></span>\n                                    <span class="font-semibold text-lg">${prix}</span>`
+                    );
+                }
+            }
         }
         
-        // Menu Bistrot
-        const bistrotRegex = /(<h3 class="font-serif text-2xl mb-4 text-terracotta">Menu Bistrot<\/h3>\s*<div class="text-4xl font-bold mb-6 text-chocolate">)[^<]+(€<\/div>)/;
-        if (bistrotRegex.test(currentContent)) {
-            currentContent = currentContent.replace(bistrotRegex, `$1${prixBistrot}$2`);
-            console.log('[Admin] ✓ Menu Bistrot remplacé');
+        // 4. REMPLACER LES PLATS
+        const platsSection = content.match(/<h3 class="font-cursive text-4xl mb-6 text-terracotta text-center md:text-left">Plats<\/h3>([\s\S]*?)<\/div>\s*<\/div>\s*<!-- Pizzas -->/)?.[0];
+        if (platsSection) {
+            let newPlatsSection = platsSection;
+            for (let i = 1; i <= 6; i++) {
+                const nom = document.querySelector(`[data-id="plat-${i}-nom"]`)?.value;
+                const prix = document.querySelector(`[data-id="plat-${i}-prix"]`)?.value;
+                
+                if (nom && prix) {
+                    const platRegex = new RegExp(`<span class="text-lg">([^<]+)<\\/span>\\s*<span class="flex-1[^>]*><\\/span>\\s*<span class="font-semibold text-lg">[^<]+<\\/span>`, 'g');
+                    const matches = [...newPlatsSection.matchAll(platRegex)];
+                    if (matches[i-1]) {
+                        newPlatsSection = newPlatsSection.replace(
+                            matches[i-1][0],
+                            `<span class="text-lg">${nom}</span>\n                                    <span class="flex-1 mx-3 border-b border-dotted border-cream/30"></span>\n                                    <span class="font-semibold text-lg">${prix}</span>`
+                        );
+                    }
+                }
+            }
+            content = content.replace(platsSection, newPlatsSection);
         }
         
-        // Menu Enfant
-        const enfantRegex = /(<h3 class="font-serif text-2xl mb-4 text-terracotta">Menu Enfant<\/h3>\s*<div class="text-4xl font-bold mb-6 text-chocolate">)[^<]+(€<\/div>)/;
-        if (enfantRegex.test(currentContent)) {
-            currentContent = currentContent.replace(enfantRegex, `$1${prixEnfant}$2`);
-            console.log('[Admin] ✓ Menu Enfant remplacé');
+        // 5. REMPLACER LES BURGERS
+        for (let i = 1; i <= 4; i++) {
+            const nom = document.querySelector(`[data-id="burger-${i}-nom"]`)?.value;
+            const desc = document.querySelector(`[data-id="burger-${i}-desc"]`)?.value;
+            const prix = document.querySelector(`[data-id="burger-${i}-prix"]`)?.value;
+            
+            if (nom && desc && prix) {
+                const burgerRegex = new RegExp(
+                    `(<div class="text-cream pb-2 border-b border-cream\\/20">\\s*<div class="flex items-center justify-between">\\s*<span class="text-lg font-semibold">)[^<]+(</span>\\s*<span class="flex-1[^>]*></span>\\s*<span class="font-semibold text-lg">)[^<]+(</span>\\s*</div>\\s*<p class="text-sm text-cream\\/70 mt-1 italic">)[^<]+(</p>)`,
+                    'g'
+                );
+                const matches = [...content.matchAll(burgerRegex)];
+                if (matches[i-1]) {
+                    content = content.replace(
+                        matches[i-1][0],
+                        `${matches[i-1][1]}${nom}${matches[i-1][2]}${prix}${matches[i-1][3]}${desc}${matches[i-1][4]}`
+                    );
+                }
+            }
         }
         
-        // 4. Encoder en UTF-8 puis Base64
-        console.log('[Admin] Encodage en Base64...');
-        const utf8Bytes = new TextEncoder().encode(currentContent);
+        // 6. REMPLACER LES PIZZAS
+        for (let i = 1; i <= 4; i++) {
+            const nom = document.querySelector(`[data-id="pizza-${i}-nom"]`)?.value;
+            const desc = document.querySelector(`[data-id="pizza-${i}-desc"]`)?.value;
+            const prix = document.querySelector(`[data-id="pizza-${i}-prix"]`)?.value;
+            
+            if (nom && desc && prix) {
+                const pizzaRegex = new RegExp(
+                    `(<div class="text-cream pb-2 border-b border-cream\\/20">\\s*<div class="flex items-center justify-between">\\s*<span class="text-lg font-semibold">)[^<]+(</span>\\s*<span class="flex-1[^>]*></span>\\s*<span class="font-semibold text-lg">)[^<]+(</span>\\s*</div>\\s*<p class="text-sm text-cream\\/70 mt-1 italic">)[^<]+(</p>)`,
+                    'g'
+                );
+                const matches = [...content.matchAll(pizzaRegex)];
+                const pizzaIndex = i + 3; // Pizzas viennent après les 4 burgers
+                if (matches[pizzaIndex]) {
+                    content = content.replace(
+                        matches[pizzaIndex][0],
+                        `${matches[pizzaIndex][1]}${nom}${matches[pizzaIndex][2]}${prix}${matches[pizzaIndex][3]}${desc}${matches[pizzaIndex][4]}`
+                    );
+                }
+            }
+        }
+        
+        // 7. REMPLACER LES DESSERTS
+        for (let i = 1; i <= 5; i++) {
+            const nom = document.querySelector(`[data-id="dessert-${i}-nom"]`)?.value;
+            const prix = document.querySelector(`[data-id="dessert-${i}-prix"]`)?.value;
+            
+            if (nom && prix) {
+                const dessertRegex = new RegExp(`<span class="text-lg">([^<]+)<\\/span>\\s*<span class="flex-1[^>]*><\\/span>\\s*<span class="font-semibold text-lg">[^<]+<\\/span>`, 'g');
+                const allMatches = [...content.matchAll(dessertRegex)];
+                // Desserts sont dans la colonne 1, après les 5 entrées
+                const dessertIndex = 4 + i; // Skip entrées (5) puis prendre les desserts
+                if (allMatches[dessertIndex]) {
+                    content = content.replace(
+                        allMatches[dessertIndex][0],
+                        `<span class="text-lg">${nom}</span>\n                                    <span class="flex-1 mx-3 border-b border-dotted border-cream/30"></span>\n                                    <span class="font-semibold text-lg">${prix}</span>`
+                    );
+                }
+            }
+        }
+        
+        console.log('[Admin] Replacements effectués');
+        
+        // 8. Encoder en UTF-8 puis Base64
+        const utf8Bytes = new TextEncoder().encode(content);
         let binaryStr = '';
         const chunkSize = 32768;
         
@@ -372,10 +458,9 @@ async function saveChanges() {
         }
         
         const base64Content = btoa(binaryStr);
-        console.log('[Admin] Encodage terminé');
         
-        // 5. Envoyer la mise à jour à GitHub AVEC LE SHA ACTUEL
-        console.log('[Admin] Envoi vers GitHub avec SHA:', currentSHA);
+        // 9. Envoyer la mise à jour avec SHA actuel
+        console.log('[Admin] Envoi vers GitHub...');
         const updateResponse = await fetch(`https://api.github.com/repos/${repo}/contents/index.html`, {
             method: 'PUT',
             headers: {
@@ -384,7 +469,7 @@ async function saveChanges() {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                message: 'Mise à jour des prix via admin',
+                message: 'Mise à jour de la carte via admin',
                 content: base64Content,
                 sha: currentSHA
             })
@@ -392,25 +477,16 @@ async function saveChanges() {
         
         if (!updateResponse.ok) {
             const errorData = await updateResponse.json();
-            console.error('[Admin] Erreur GitHub:', errorData);
             throw new Error(`Erreur ${updateResponse.status}: ${errorData.message}`);
         }
         
-        const result = await updateResponse.json();
-        console.log('[Admin] ✅ Succès GitHub:', result);
-        
-        alert('✅ SUCCÈS : SITE MIS À JOUR !\n\nVos modifications ont été publiées sur GitHub.\n\nRechargez votre site (F5) pour voir les changements.');
-        
+        alert('✅ SUCCÈS : SITE MIS À JOUR !\n\nVos modifications ont été publiées sur GitHub.');
         document.getElementById('status').className = 'mt-6 p-4 rounded-lg bg-green-100 text-green-800 border-2 border-green-400';
         document.getElementById('status').innerHTML = '<strong>✅ Modifications publiées avec succès !</strong>';
         
     } catch (error) {
         console.error('[Admin] ❌ Erreur:', error);
-        
-        const errorMessage = `❌ ERREUR : ${error.message}\n\nVÉRIFIEZ :\n1. Votre token GitHub a les permissions "repo"\n2. Le nom du dépôt est correct (format: votre-nom/bistrot-arlesien)\n3. Le fichier index.html existe bien dans votre dépôt\n4. Vous avez les droits d'écriture sur ce dépôt`;
-        
-        alert(errorMessage);
-        
+        alert(`❌ ERREUR : ${error.message}\n\nVérifiez votre configuration GitHub.`);
         document.getElementById('status').className = 'mt-6 p-4 rounded-lg bg-red-100 text-red-800 border-2 border-red-400';
         document.getElementById('status').innerHTML = `<strong>❌ ERREUR :</strong> ${error.message}`;
     }
