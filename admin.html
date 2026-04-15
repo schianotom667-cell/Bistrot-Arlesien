@@ -213,7 +213,7 @@ async function publishChanges() {
     showStatus('⏳ Récupération du fichier index.html...', 'info');
     
     try {
-        // 1. Récupérer le fichier index.html actuel
+        // 1. Récupérer le fichier index.html actuel avec décodage UTF-8 correct
         const getResponse = await fetch(`https://api.github.com/repos/${repo}/contents/index.html`, {
             headers: {
                 'Authorization': `token ${token}`,
@@ -226,7 +226,14 @@ async function publishChanges() {
         }
         
         const fileData = await getResponse.json();
-        const currentContent = atob(fileData.content);
+        
+        // DÉCODAGE UTF-8 CORRECT
+        const binaryString = atob(fileData.content);
+        const bytes = new Uint8Array(binaryString.length);
+        for (let i = 0; i < binaryString.length; i++) {
+            bytes[i] = binaryString.charCodeAt(i);
+        }
+        const currentContent = new TextDecoder('utf-8').decode(bytes);
         
         showStatus('⏳ Mise à jour des prix...', 'info');
         
@@ -264,9 +271,17 @@ async function publishChanges() {
         
         showStatus('⏳ Envoi vers GitHub...', 'info');
         
-        // 4. Encoder en UTF-8 puis Base64 (CORRECTION ENCODAGE)
+        // 4. ENCODAGE UTF-8 PARFAIT (avec gestion des gros fichiers)
         const utf8Bytes = new TextEncoder().encode(updatedContent);
-        const base64Content = btoa(String.fromCharCode(...utf8Bytes));
+        let binaryString = '';
+        const chunkSize = 32768;
+        
+        for (let i = 0; i < utf8Bytes.length; i += chunkSize) {
+            const chunk = utf8Bytes.subarray(i, Math.min(i + chunkSize, utf8Bytes.length));
+            binaryString += String.fromCharCode.apply(null, chunk);
+        }
+        
+        const base64Content = btoa(binaryString);
         
         // 5. Envoyer la mise à jour
         const updateResponse = await fetch(`https://api.github.com/repos/${repo}/contents/index.html`, {
