@@ -264,7 +264,11 @@ async function publishChanges() {
         
         showStatus('⏳ Envoi vers GitHub...', 'info');
         
-        // 4. Envoyer la mise à jour
+        // 4. Encoder en UTF-8 puis Base64 (CORRECTION ENCODAGE)
+        const utf8Bytes = new TextEncoder().encode(updatedContent);
+        const base64Content = btoa(String.fromCharCode(...utf8Bytes));
+        
+        // 5. Envoyer la mise à jour
         const updateResponse = await fetch(`https://api.github.com/repos/${repo}/contents/index.html`, {
             method: 'PUT',
             headers: {
@@ -274,7 +278,7 @@ async function publishChanges() {
             },
             body: JSON.stringify({
                 message: 'Mise à jour des prix via admin',
-                content: btoa(unescape(encodeURIComponent(updatedContent))),
+                content: base64Content,
                 sha: fileData.sha
             })
         });
