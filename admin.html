@@ -31,23 +31,32 @@
 
         <div class="bg-white p-8 rounded-b-xl shadow-lg">
             
-            <!-- Configuration GitHub (masquée une fois configurée) -->
+            <!-- Configuration GitHub -->
             <div id="github-config" class="mb-10 p-6 bg-blue-50 border-2 border-blue-200 rounded-lg">
-                <h2 class="text-xl font-bold text-blue-900 mb-4">🔐 Configuration GitHub (Une seule fois)</h2>
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-bold text-blue-900">🔐 Configuration GitHub</h2>
+                    <button onclick="resetConfig()" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 text-sm">
+                        🔄 Réinitialiser le Token
+                    </button>
+                </div>
                 <div class="space-y-3">
                     <div>
                         <label class="block text-sm font-semibold mb-1">Nom du dépôt (ex: votre-nom/bistrot-arlesien)</label>
                         <input type="text" id="github-repo" class="w-full p-2 border border-gray-300 rounded" placeholder="votre-nom/bistrot-arlesien">
                     </div>
                     <div>
-                        <label class="block text-sm font-semibold mb-1">Token GitHub (créez-en un sur github.com/settings/tokens)</label>
+                        <label class="block text-sm font-semibold mb-1">Token GitHub</label>
                         <input type="password" id="github-token" class="w-full p-2 border border-gray-300 rounded" placeholder="ghp_...">
-                        <p class="text-xs text-gray-600 mt-1">Permissions requises : <code>repo</code></p>
+                        <p class="text-xs text-gray-600 mt-1">
+                            Créez un token sur <a href="https://github.com/settings/tokens" target="_blank" class="text-blue-600 underline">github.com/settings/tokens</a> 
+                            avec la permission <code class="bg-gray-200 px-1 rounded">repo</code>
+                        </p>
                     </div>
                     <button onclick="saveGitHubConfig()" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">
                         💾 Sauvegarder la configuration
                     </button>
                 </div>
+                <div id="config-status" class="mt-3 p-2 rounded hidden"></div>
             </div>
             
             <!-- Section Menus -->
@@ -166,21 +175,53 @@ Sirop ou Jus</textarea>
 </div>
 
 <script>
+// Réinitialiser la configuration
+function resetConfig() {
+    if (confirm('⚠️ Voulez-vous vraiment effacer le Token et le dépôt enregistrés ?')) {
+        localStorage.removeItem('github_repo');
+        localStorage.removeItem('github_token');
+        document.getElementById('github-repo').value = '';
+        document.getElementById('github-token').value = '';
+        
+        const configStatus = document.getElementById('config-status');
+        configStatus.className = 'mt-3 p-2 rounded bg-yellow-100 text-yellow-800';
+        configStatus.textContent = '🔄 Configuration réinitialisée. Veuillez entrer vos informations à nouveau.';
+        configStatus.classList.remove('hidden');
+        
+        alert('✅ Configuration réinitialisée ! Vous pouvez maintenant entrer un nouveau Token.');
+    }
+}
+
 // Sauvegarder la config GitHub
 function saveGitHubConfig() {
-    const repo = document.getElementById('github-repo').value;
-    const token = document.getElementById('github-token').value;
+    const repo = document.getElementById('github-repo').value.trim();
+    const token = document.getElementById('github-token').value.trim();
     
     if (!repo || !token) {
-        alert('⚠️ Veuillez remplir le nom du dépôt et le token GitHub');
+        alert('⚠️ ERREUR : Veuillez remplir le nom du dépôt ET le token GitHub');
         return;
+    }
+    
+    // Valider le format du repo
+    if (!repo.includes('/')) {
+        alert('⚠️ ERREUR : Le dépôt doit être au format "votre-nom/nom-du-depot"');
+        return;
+    }
+    
+    // Valider le format du token
+    if (!token.startsWith('ghp_') && !token.startsWith('github_pat_')) {
+        alert('⚠️ ATTENTION : Votre token ne commence pas par "ghp_" ou "github_pat_". Êtes-vous sûr qu\'il est correct ?');
     }
     
     localStorage.setItem('github_repo', repo);
     localStorage.setItem('github_token', token);
     
-    document.getElementById('github-config').classList.add('hidden');
-    showStatus('✅ Configuration GitHub sauvegardée', 'success');
+    const configStatus = document.getElementById('config-status');
+    configStatus.className = 'mt-3 p-2 rounded bg-green-100 text-green-800';
+    configStatus.innerHTML = `✅ <strong>Configuration sauvegardée !</strong><br>Dépôt : <code>${repo}</code>`;
+    configStatus.classList.remove('hidden');
+    
+    alert(`✅ SUCCÈS : Configuration GitHub sauvegardée !\n\nDépôt : ${repo}\n\nVous pouvez maintenant modifier les prix et cliquer sur "Enregistrer et publier sur GitHub".`);
 }
 
 // Charger la config au démarrage
@@ -191,7 +232,11 @@ window.onload = function() {
     if (repo && token) {
         document.getElementById('github-repo').value = repo;
         document.getElementById('github-token').value = token;
-        document.getElementById('github-config').classList.add('hidden');
+        
+        const configStatus = document.getElementById('config-status');
+        configStatus.className = 'mt-3 p-2 rounded bg-green-100 text-green-800';
+        configStatus.innerHTML = `✅ Configuration chargée : <code>${repo}</code>`;
+        configStatus.classList.remove('hidden');
     }
 };
 
@@ -341,20 +386,24 @@ async function publishChanges() {
         });
         
         if (!updateResponse.ok) {
-            throw new Error(`Erreur lors de la mise à jour: ${updateResponse.status}`);
+            const errorData = await updateResponse.json();
+            console.error('[Admin] Erreur GitHub:', errorData);
+            throw new Error(`Erreur ${updateResponse.status}: ${errorData.message || 'Vérifiez vos permissions'}`);
         }
         
-        showStatus('✅ Modifications publiées avec succès sur GitHub ! Les accents et symboles € sont préservés.', 'success');
+        const result = await updateResponse.json();
+        console.log('[Admin] Succès GitHub:', result);
+        
+        alert('✅ SUCCÈS : SITE MIS À JOUR !\n\nVos modifications ont été publiées sur GitHub.\n\nRechargez votre site (F5) pour voir les changements.');
+        showStatus('✅ SUCCÈS ! Vos modifications sont publiées sur GitHub. Rechargez votre site pour voir les changements.', 'success');
         
     } catch (error) {
         console.error('[Admin] Erreur complète:', error);
-        showStatus(`❌ ERREUR : ${error.message}<br><br>Vérifiez :<br>1. Votre token GitHub a les permissions "repo"<br>2. Le nom du dépôt est correct (exemple: votre-nom/bistrot-arlesien)<br>3. Le fichier index.html existe bien dans votre dépôt`, 'error');
-    }
-}
-</script>
-
-</body>
-</html>tus(`❌ Erreur: ${error.message}`, 'error');
+        
+        const errorMessage = `❌ ERREUR : ${error.message}\n\nVÉRIFIEZ :\n1. Votre token GitHub a les permissions "repo"\n2. Le nom du dépôt est correct (format: votre-nom/bistrot-arlesien)\n3. Le fichier index.html existe bien dans votre dépôt\n4. Vous êtes propriétaire du dépôt ou avez les droits d'écriture`;
+        
+        alert(errorMessage);
+        showStatus(`❌ ERREUR : ${error.message}<br><br>Vérifiez :<br>1. Votre token GitHub a les permissions "repo"<br>2. Le nom du dépôt est correct (votre-nom/bistrot-arlesien)<br>3. Le fichier index.html existe bien dans votre dépôt`, 'error');
     }
 }
 </script>
