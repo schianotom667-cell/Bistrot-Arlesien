@@ -147,7 +147,7 @@ Sirop ou Jus</textarea>
 
             <!-- Action Buttons -->
             <div class="flex gap-4 pt-6 border-t border-gray-200">
-                <button onclick="publishChanges()" class="flex-1 bg-terracotta text-white py-4 rounded-lg hover:bg-terracotta/90 font-bold text-lg shadow-lg transition-all">
+                <button id="save-btn" onclick="publishChanges()" class="flex-1 bg-terracotta text-white py-4 rounded-lg hover:bg-terracotta/90 font-bold text-lg shadow-lg transition-all">
                     🚀 Enregistrer et publier sur GitHub
                 </button>
                 <a href="index.html" class="flex-1">
@@ -158,7 +158,9 @@ Sirop ou Jus</textarea>
             </div>
 
             <!-- Status -->
-            <div id="status" class="mt-6 hidden p-4 rounded-lg"></div>
+            <div id="status" class="mt-6 p-4 rounded-lg bg-gray-100 text-gray-700">
+                <p>💡 <strong>Prêt à enregistrer.</strong> Modifiez les prix ci-dessus puis cliquez sur "Enregistrer et publier sur GitHub".</p>
+            </div>
         </div>
     </div>
 </div>
@@ -195,9 +197,26 @@ window.onload = function() {
 
 function showStatus(message, type) {
     const statusDiv = document.getElementById('status');
-    statusDiv.className = `mt-6 p-4 rounded-lg ${type === 'success' ? 'bg-green-100 text-green-800' : type === 'error' ? 'bg-red-100 text-red-800' : 'bg-blue-100 text-blue-800'}`;
-    statusDiv.textContent = message;
-    statusDiv.classList.remove('hidden');
+    const saveBtn = document.getElementById('save-btn');
+    
+    if (type === 'success') {
+        statusDiv.className = 'mt-6 p-4 rounded-lg bg-green-100 text-green-800 border-2 border-green-400';
+        saveBtn.disabled = false;
+        saveBtn.textContent = '✅ Enregistré !';
+        setTimeout(() => {
+            saveBtn.textContent = '🚀 Enregistrer et publier sur GitHub';
+        }, 3000);
+    } else if (type === 'error') {
+        statusDiv.className = 'mt-6 p-4 rounded-lg bg-red-100 text-red-800 border-2 border-red-400';
+        saveBtn.disabled = false;
+    } else {
+        statusDiv.className = 'mt-6 p-4 rounded-lg bg-blue-100 text-blue-800';
+        saveBtn.disabled = true;
+        saveBtn.textContent = '⏳ Enregistrement...';
+    }
+    
+    statusDiv.innerHTML = `<strong>${message}</strong>`;
+    console.log(`[Admin] ${message}`);
 }
 
 // FONCTION D'ENCODAGE UTF-8 INFAILLIBLE
@@ -273,10 +292,33 @@ async function publishChanges() {
         
         // Remplacer le prix du Menu Gourmet
         const prixGourmet = document.getElementById('prix-gourmet').value;
-        updatedContent = updatedContent.replace(
-            /<div class="text-4xl font-bold mb-6 text-chocolate">[\d,]+€<\/div>/,
-            `<div class="text-4xl font-bold mb-6 text-chocolate">${prixGourmet}</div>`
-        );
+        const prixBistrot = document.getElementById('prix-bistrot').value;
+        const prixEnfant = document.getElementById('prix-enfant').value;
+        
+        console.log('[Admin] Nouveaux prix:', { gourmet: prixGourmet, bistrot: prixBistrot, enfant: prixEnfant });
+        
+        // Regex plus précise pour Menu Gourmet (1er menu)
+        const gourmetRegex = /(<h3 class="font-serif text-2xl mb-4 text-terracotta">Menu Gourmet<\/h3>\s*<div class="text-4xl font-bold mb-6 text-chocolate">)[^<]+(€<\/div>)/;
+        if (gourmetRegex.test(updatedContent)) {
+            updatedContent = updatedContent.replace(gourmetRegex, `$1${prixGourmet}$2`);
+            console.log('[Admin] Menu Gourmet remplacé par:', prixGourmet);
+        } else {
+            console.warn('[Admin] Menu Gourmet non trouvé dans le HTML');
+        }
+        
+        // Menu Bistrot (2e menu)
+        const bistrotRegex = /(<h3 class="font-serif text-2xl mb-4 text-terracotta">Menu Bistrot<\/h3>\s*<div class="text-4xl font-bold mb-6 text-chocolate">)[^<]+(€<\/div>)/;
+        if (bistrotRegex.test(updatedContent)) {
+            updatedContent = updatedContent.replace(bistrotRegex, `$1${prixBistrot}$2`);
+            console.log('[Admin] Menu Bistrot remplacé par:', prixBistrot);
+        }
+        
+        // Menu Enfant (3e menu)
+        const enfantRegex = /(<h3 class="font-serif text-2xl mb-4 text-terracotta">Menu Enfant<\/h3>\s*<div class="text-4xl font-bold mb-6 text-chocolate">)[^<]+(€<\/div>)/;
+        if (enfantRegex.test(updatedContent)) {
+            updatedContent = updatedContent.replace(enfantRegex, `$1${prixEnfant}$2`);
+            console.log('[Admin] Menu Enfant remplacé par:', prixEnfant);
+        }
         
         showStatus('⏳ Encodage UTF-8 et envoi vers GitHub...', 'info');
         
@@ -305,8 +347,14 @@ async function publishChanges() {
         showStatus('✅ Modifications publiées avec succès sur GitHub ! Les accents et symboles € sont préservés.', 'success');
         
     } catch (error) {
-        console.error(error);
-        showStatus(`❌ Erreur: ${error.message}`, 'error');
+        console.error('[Admin] Erreur complète:', error);
+        showStatus(`❌ ERREUR : ${error.message}<br><br>Vérifiez :<br>1. Votre token GitHub a les permissions "repo"<br>2. Le nom du dépôt est correct (exemple: votre-nom/bistrot-arlesien)<br>3. Le fichier index.html existe bien dans votre dépôt`, 'error');
+    }
+}
+</script>
+
+</body>
+</html>tus(`❌ Erreur: ${error.message}`, 'error');
     }
 }
 </script>
