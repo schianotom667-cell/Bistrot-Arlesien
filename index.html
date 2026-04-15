@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Bistrot Arlésien - Bistronomie provençale au cœur d'Arles. Cuisine maison, produits frais, Place du Forum.">
-    <title>Le Bistrot Arlésien</title>
+    <title>Bistrot Arlésien - Bistronomie Provençale à Arles</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,13 +49,6 @@
         .fade-in-up.visible {
             opacity: 1;
             transform: translateY(0);
-        }
-        
-        .hero-bg {
-            position: relative;
-            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://customer-assets.emergentagent.com/job_5402dfc9-f18a-4ac1-918e-f12a259e280c/artifacts/txnast3g_58772277_813974082309810_1826016169211985920_n.jpg');
-            background-size: cover;
-            background-position: center;
         }
         
         html {
@@ -121,7 +114,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="accueil" class="min-h-screen hero-bg flex items-center justify-center text-center text-white">
+    <section id="accueil" class="min-h-screen flex items-center justify-center text-center text-white" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://customer-assets.emergentagent.com/job_5402dfc9-f18a-4ac1-918e-f12a259e280c/artifacts/txnast3g_58772277_813974082309810_1826016169211985920_n.jpg'); background-size: cover; background-position: center;">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto">
                 <h1 class="font-serif text-5xl md:text-7xl font-bold mb-6 fade-in-up">
@@ -160,11 +153,7 @@
                 </h2>
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div class="fade-in-up">
-                        <img 
-                            src="https://customer-assets.emergentagent.com/job_provence-dining/artifacts/gsyxbdua_qzmlkjdlkqzjdklmjqz.webp" 
-                            alt="Entrecôte grillée, frites maison et salade fraîche" 
-                            class="h-80 w-full object-cover rounded-lg shadow-lg"
-                        />
+                        <img src="https://customer-assets.emergentagent.com/job_provence-dining/artifacts/pwdu37w4_qzmlkjdlkqzjdklmjqz.webp" alt="Entrecôte grillée, frites maison et salade fraîche - Spécialité Bistrot Arlésien" class="h-80 w-full object-cover rounded-lg shadow-lg">
                     </div>
                     <div class="fade-in-up">
                         <p class="text-lg leading-relaxed mb-6">
@@ -184,7 +173,8 @@
 
     <!-- Section Menus -->
     <section id="menus" class="py-20 bg-cream relative">
-        <div class="absolute inset-0 opacity-5" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23CD6155&quot; fill-opacity=&quot;1&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        <!-- Background pattern -->
+        <div class="absolute inset-0 opacity-5" style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23CD6155' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&quot;);"></div>
         
         <div class="container mx-auto px-4 relative z-10">
             <div class="max-w-6xl mx-auto">
@@ -195,54 +185,90 @@
                 
                 <div class="grid md:grid-cols-3 gap-8">
                     <!-- Menu Gourmet -->
-                    <div class="fade-in-up bg-white border-2 border-terracotta/20 rounded-lg p-8 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300" style="background-image: linear-gradient(to bottom, rgba(250, 246, 242, 0.5), rgba(255, 255, 255, 1));">
+                    <div class="fade-in-up hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 bg-white border-2 border-terracotta/20 rounded-lg p-8" style="background-image: linear-gradient(to bottom, rgba(250, 246, 242, 0.5), rgba(255, 255, 255, 1));">
                         <div class="text-center">
-                            <svg class="w-16 h-16 text-terracotta mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"></path><line x1="6" y1="17" x2="18" y2="17"></line></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#CD6155" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4"><path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"></path><line x1="6" y1="17" x2="18" y2="17"></line></svg>
                             <h3 class="font-serif text-2xl mb-4 text-terracotta">Menu Gourmet</h3>
                             <div class="text-4xl font-bold mb-6 text-chocolate">25,90€</div>
                         </div>
                         <div class="border-t-2 border-b-2 border-terracotta/20 py-4 mb-4">
                             <ul class="space-y-3 text-gray-700">
-                                <li class="flex items-center"><span class="w-2 h-2 bg-terracotta rounded-full mr-3"></span>Foie Gras Maison</li>
-                                <li class="flex items-center"><span class="w-2 h-2 bg-terracotta rounded-full mr-3"></span>Assiette du Boucher</li>
-                                <li class="flex items-center"><span class="w-2 h-2 bg-terracotta rounded-full mr-3"></span>Dessert du Chef</li>
-                                <li class="flex items-center"><span class="w-2 h-2 bg-terracotta rounded-full mr-3"></span>Café ou Thé</li>
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-terracotta rounded-full mr-3"></span>
+                                    Foie Gras Maison
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-terracotta rounded-full mr-3"></span>
+                                    Assiette du Boucher
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-terracotta rounded-full mr-3"></span>
+                                    Dessert du Chef
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-terracotta rounded-full mr-3"></span>
+                                    Café ou Thé
+                                </li>
                             </ul>
                         </div>
                         <p class="text-sm text-center text-terracotta font-semibold italic">Notre sélection raffinée</p>
                     </div>
 
                     <!-- Menu Bistrot -->
-                    <div class="fade-in-up bg-white border-2 border-terracotta/20 rounded-lg p-8 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300" style="background-image: linear-gradient(to bottom, rgba(250, 246, 242, 0.5), rgba(255, 255, 255, 1));">
+                    <div class="fade-in-up hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 bg-white border-2 border-terracotta/20 rounded-lg p-8" style="background-image: linear-gradient(to bottom, rgba(250, 246, 242, 0.5), rgba(255, 255, 255, 1));">
                         <div class="text-center">
-                            <svg class="w-16 h-16 text-terracotta mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"></path><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#CD6155" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4"><path d="m18 2 4 4"></path><path d="m17 7 3-3"></path><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"></path><path d="m9 11 4 4"></path><path d="m5 19-3 3"></path><path d="m14 4 6 6"></path></svg>
                             <h3 class="font-serif text-2xl mb-4 text-terracotta">Menu Bistrot</h3>
                             <div class="text-4xl font-bold mb-6 text-chocolate">15,90€</div>
                         </div>
                         <div class="border-t-2 border-b-2 border-terracotta/20 py-4 mb-4">
                             <ul class="space-y-3 text-gray-700">
-                                <li class="flex items-center"><span class="w-2 h-2 bg-terracotta rounded-full mr-3"></span>Entrée au choix</li>
-                                <li class="flex items-center"><span class="w-2 h-2 bg-terracotta rounded-full mr-3"></span>Plat du Jour</li>
-                                <li class="flex items-center"><span class="w-2 h-2 bg-terracotta rounded-full mr-3"></span>Dessert maison</li>
-                                <li class="flex items-center"><span class="w-2 h-2 bg-terracotta rounded-full mr-3"></span>Café offert</li>
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-terracotta rounded-full mr-3"></span>
+                                    Entrée au choix
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-terracotta rounded-full mr-3"></span>
+                                    Plat du Jour
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-terracotta rounded-full mr-3"></span>
+                                    Dessert maison
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-terracotta rounded-full mr-3"></span>
+                                    Café offert
+                                </li>
                             </ul>
                         </div>
                         <p class="text-sm text-center text-terracotta font-semibold italic">Midi uniquement</p>
                     </div>
 
                     <!-- Menu Enfant -->
-                    <div class="fade-in-up bg-white border-2 border-terracotta/20 rounded-lg p-8 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300" style="background-image: linear-gradient(to bottom, rgba(250, 246, 242, 0.5), rgba(255, 255, 255, 1));">
+                    <div class="fade-in-up hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 bg-white border-2 border-terracotta/20 rounded-lg p-8" style="background-image: linear-gradient(to bottom, rgba(250, 246, 242, 0.5), rgba(255, 255, 255, 1));">
                         <div class="text-center">
-                            <svg class="w-16 h-16 text-terracotta mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 11h.01"></path><path d="M11 15h.01"></path><path d="M16 16h.01"></path><path d="m2 16 20 6-6-20A20 20 0 0 0 2 16"></path><path d="M5.71 17.11a17.04 17.04 0 0 1 11.4-11.4"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#CD6155" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
                             <h3 class="font-serif text-2xl mb-4 text-terracotta">Menu Enfant</h3>
                             <div class="text-4xl font-bold mb-6 text-chocolate">10,50€</div>
                         </div>
                         <div class="border-t-2 border-b-2 border-terracotta/20 py-4 mb-4">
                             <ul class="space-y-3 text-gray-700">
-                                <li class="flex items-center"><span class="w-2 h-2 bg-terracotta rounded-full mr-3"></span>Steak haché</li>
-                                <li class="flex items-center"><span class="w-2 h-2 bg-terracotta rounded-full mr-3"></span>Frites maison</li>
-                                <li class="flex items-center"><span class="w-2 h-2 bg-terracotta rounded-full mr-3"></span>Glace au choix</li>
-                                <li class="flex items-center"><span class="w-2 h-2 bg-terracotta rounded-full mr-3"></span>Sirop ou Jus</li>
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-terracotta rounded-full mr-3"></span>
+                                    Steak haché
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-terracotta rounded-full mr-3"></span>
+                                    Frites maison
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-terracotta rounded-full mr-3"></span>
+                                    Glace au choix
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-terracotta rounded-full mr-3"></span>
+                                    Sirop ou Jus
+                                </li>
                             </ul>
                         </div>
                         <p class="text-sm text-center text-terracotta font-semibold italic">Jusqu'à 12 ans</p>
@@ -252,7 +278,7 @@
         </div>
     </section>
 
-    <!-- Section La Carte -->
+    <!-- Section La Carte - Full Width Menu -->
     <section id="carte" class="py-20 bg-chocolate">
         <div class="w-full">
             <div class="max-w-7xl mx-auto px-4">
@@ -261,7 +287,9 @@
                 </h2>
                 <p class="text-center text-cream/80 mb-16 fade-in-up">Découvrez nos spécialités</p>
                 
+                <!-- Menu Grid - 2 Columns -->
                 <div class="grid md:grid-cols-2 gap-x-16 gap-y-12">
+                    
                     <!-- Column 1 -->
                     <div class="space-y-12">
                         <!-- Entrées -->
@@ -446,6 +474,7 @@
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -472,7 +501,7 @@
                         <img src="https://customer-assets.emergentagent.com/job_provence-dining/artifacts/bxuf54ug_dzqqqqqqqsdqs.webp" alt="Dessert Macaron" class="w-full h-full object-cover">
                     </div>
                     <div class="aspect-square rounded-lg overflow-hidden hover:scale-105 transition-transform shadow-md">
-                        <img src="https://customer-assets.emergentagent.com/job_provence-dining/artifacts/hap3ch6h_dzqqqqqqqzz.webp" alt="Pizza Jambon Cru" class="w-full h-full object-cover">
+                        <img src="https://customer-assets.emergentagent.com/job_providence-dining/artifacts/hap3ch6h_dzqqqqqqqzz.webp" alt="Pizza Jambon Cru" class="w-full h-full object-cover">
                     </div>
                     <div class="aspect-square rounded-lg overflow-hidden hover:scale-105 transition-transform shadow-md">
                         <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" alt="Burgers Gourmands" class="w-full h-full object-cover">
@@ -496,18 +525,19 @@
                     Nous Contacter
                 </h2>
                 <div class="grid md:grid-cols-2 gap-12 mb-16">
+                    <!-- Informations -->
                     <div class="bg-terracotta text-white p-8 rounded-xl fade-in-up">
                         <h3 class="font-serif text-3xl mb-8">Où nous trouver ?</h3>
                         <div class="space-y-6">
                             <div class="flex items-start gap-3">
-                                <svg class="w-6 h-6 flex-shrink-0 mt-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                                 <div>
                                     <h4 class="font-semibold text-lg mb-2">Adresse</h4>
                                     <p>5 Place du Forum<br>13200 Arles<br>(près des arènes)</p>
                                 </div>
                             </div>
                             <div class="flex items-start gap-3">
-                                <svg class="w-6 h-6 flex-shrink-0 mt-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                                 <div>
                                     <h4 class="font-semibold text-lg mb-2">Horaires</h4>
                                     <p>Lundi au Vendredi<br>Déjeuner et Dîner<br>12h-14h30 / 19h-22h30</p>
@@ -516,50 +546,41 @@
                         </div>
                     </div>
                     
+                    <!-- Image Restaurant -->
                     <div class="fade-in-up">
-                        <img 
-                            src="https://customer-assets.emergentagent.com/job_5402dfc9-f18a-4ac1-918e-f12a259e280c/artifacts/ql8ujsuf_unnamed%20%281%29.jpg" 
-                            alt="Restaurant de nuit" 
-                            class="h-full w-full object-cover rounded-xl shadow-lg"
-                        >
+                        <img src="https://customer-assets.emergentagent.com/job_5402dfc9-f18a-4ac1-918e-f12a259e280c/artifacts/ql8ujsuf_unnamed%20%281%29.jpg" alt="Restaurant de nuit" class="h-full w-full object-cover rounded-xl shadow-lg">
                     </div>
                 </div>
 
+                <!-- Contact Methods -->
                 <div class="grid md:grid-cols-3 gap-8 mb-12 fade-in-up">
-                    <div class="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow">
-                        <svg class="w-12 h-12 mx-auto mb-4 text-terracotta" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <div class="text-center p-6 shadow-md hover:shadow-xl transition-shadow bg-white rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#CD6155" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                         <h4 class="font-serif text-xl mb-2 text-terracotta">Par Téléphone</h4>
                         <p class="font-semibold">04 90 99 51 93</p>
                     </div>
                     
-                    <div class="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow">
-                        <svg class="w-12 h-12 mx-auto mb-4 text-terracotta" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <div class="text-center p-6 shadow-md hover:shadow-xl transition-shadow bg-white rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#CD6155" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                         <h4 class="font-serif text-xl mb-2 text-terracotta">Nous Trouver</h4>
                         <p>5 Place du Forum<br>13200 Arles</p>
                     </div>
                     
-                    <div class="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow">
-                        <svg class="w-12 h-12 mx-auto mb-4 text-terracotta" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    <div class="text-center p-6 shadow-md hover:shadow-xl transition-shadow bg-white rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#CD6155" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                         <h4 class="font-serif text-xl mb-2 text-terracotta">Sur Facebook</h4>
                         <p>Suivez notre page<br>Bistrot Arlésien</p>
                     </div>
                 </div>
 
+                <!-- Google Maps -->
                 <div class="mb-12 fade-in-up">
                     <div class="rounded-xl overflow-hidden shadow-lg">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2890.0!2d4.6275!3d43.6767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b5c4e2c3c8c8c9%3A0x1!2s5%20Place%20du%20Forum%2C%2013200%20Arles!5e0!3m2!1sen!2sfr!4v1234567890"
-                            width="100%"
-                            height="400"
-                            style="border:0;"
-                            allowfullscreen=""
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
-                            title="Bistrot Arlésien Location">
-                        </iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2890.0!2d4.6275!3d43.6767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b5c4e2c3c8c8c9%3A0x1!2s5%20Place%20du%20Forum%2C%2013200%20Arles!5e0!3m2!1sen!2sfr!4v1234567890" width="100%" height="400" style="border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Bistrot Arlésien Location"></iframe>
                     </div>
                 </div>
 
+                <!-- Call to Action Buttons -->
                 <div class="flex flex-col md:flex-row gap-4 justify-center fade-in-up">
                     <a href="tel:0490995193">
                         <button class="bg-terracotta text-white px-8 py-6 text-lg hover:bg-terracotta/90 transition-all font-semibold w-full md:w-auto shadow-lg hover:shadow-xl rounded-lg flex items-center justify-center gap-2">
@@ -583,13 +604,13 @@
         <div class="container mx-auto px-4 text-center">
             <h3 class="font-serif text-2xl mb-4">Bistrot Arlésien</h3>
             <p class="mb-4">Bistronomie provençale au cœur d'Arles</p>
-            <p class="text-sm opacity-80"><span id="secret-btn" style="cursor:pointer">©</span> 2024 Bistrot Arlésien - 5 Place du Forum, 13200 Arles</p>
+            <p class="text-sm opacity-80"><a href="javascript:void(0)" onclick="if(prompt('Code')=='13200bistrotarlésiensite')window.location.href='admin.html'" style="color:inherit;text-decoration:none;">©</a> 2024 Bistrot Arlésien - 5 Place du Forum, 13200 Arles</p>
         </div>
     </footer>
 
     <!-- JavaScript -->
     <script>
-        // Mobile menu
+        // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = document.getElementById('menu-icon');
@@ -626,13 +647,6 @@
 
         const fadeElements = document.querySelectorAll('.fade-in-up');
         fadeElements.forEach(el => observer.observe(el));
-        
-        // Admin access
-        document.getElementById('secret-btn').onclick = function() {
-            if (prompt('Code :') === '13200bistrotarlésiensite') {
-                window.location.href = 'admin.html';
-            }
-        };
     </script>
 
 </body>
